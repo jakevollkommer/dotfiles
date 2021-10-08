@@ -1,4 +1,45 @@
 export PATH="$PATH:~/flutter/bin"
+
+# Set Variables
+
+# Change ZSH Options
+
+# Create Aliases
+alias l="ls -GFh"
+alias ls="ls -GFh"
+alias ll="ls -lA"
+alias la="ls -A"
+alias fuck="echo $'it\'s gonna be okay'"
+alias shit="echo 'do not worry'"
+alias iphoneusb="sudo killall -STOP -c usbd"
+alias chsongs="~/Library/Application Support/com.srylain.CloneHero"
+alias firebase="`npm config get prefix`/bin/firebase"
+alias mini-1="ssh administrator@198.205.118.94"
+alias mini-2="ssh administrator@198.205.118.163"
+alias mini-3="ssh administrator@198.205.118.162"
+alias gorack="ftp jvollkommer:Vrl-2021@198.205.118.90"
+alias seedbox="ftp seedbox:sbsehct1B!@rain.seedhost.eu"
+
+# Customize Prompts
+PROMPT='
+%1~ %L %# '
+
+RPROMPT='%*'
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# Apparently zsh PS1 is different from bash PS1?
+#'[\[$(tput sgr0)\]\[\033[38;5;12m\]\t\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]'
+
+# Add Locations to $PATH Variable
+
+# Write Functions
+function mkcd() {
+    mkdir -p "%@" && cd "$_";
+}
+
+# Use ZSH Plugins
+
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/jakevollkommer/.sdkman"
-[[ -s "/Users/jakevollkommer/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jakevollkommer/.sdkman/bin/sdkman-init.sh"
+#export SDKMAN_DIR="/Users/jakevollkommer/.sdkman"
+#[[ -s "/Users/jakevollkommer/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jakevollkommer/.sdkman/bin/sdkman-init.sh"
