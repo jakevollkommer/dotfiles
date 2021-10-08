@@ -5,7 +5,7 @@
 	process = git-lfs filter-process
 [user]
 	name = jakevollkommer
-	email = jakevollkommer@gmail.com
+	email = 7663746+jakevollkommer@users.noreply.github.com
 [push]
     default = simple
 [alias]
@@ -16,3 +16,8 @@
         diff = auto
         interactive = auto
         status = auto
+[credential]
+	helper = osxkeychain
+[http]
+	postBuffer = 100000000
+	version = HTTP/2
