@@ -8,10 +8,12 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 # Change ZSH Options
 
 # Create Aliases
-alias l="ls -GFh"
-alias ls="ls -GFh"
-alias ll="ls -lA"
-alias la="ls -A"
+alias ls="exa"
+alias l="exa -GF"
+alias ll="exa -lah --git"
+alias lt="exa -lah --git --tree --level=2"
+alias la="exa -ah"
+alias cat="bat"
 alias fuck="echo $'it\'s gonna be okay'"
 alias shit="echo 'do not worry'"
 alias iphoneusb="sudo killall -STOP -c usbd"
