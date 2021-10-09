@@ -41,6 +41,7 @@ tap "homebrew/core"
 # brew "xvid", link: false
 # # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+brew "git"
 # # GNU debugger
 # brew "gdb"
 # # Git extension for versioning large files
