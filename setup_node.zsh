@@ -12,3 +12,14 @@ else
     echo "Installing Node & NPM with n..."
     n latest
 fi
+
+# Install Global NPM Packages
+npm install --global firebase-admin
+npm install --global firebase-functions
+npm install --global firebase-tools
+npm install --global typescript
+npm install --global eslint
+npm install --global yarn
+
+echo "Global NPM Packages Installed:"
+npm list --global --depth=0
