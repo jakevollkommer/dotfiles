@@ -43,7 +43,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 #'[\[$(tput sgr0)\]\[\033[38;5;12m\]\t\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]'
 
 # Add Locations to $PATH Variable
-export PATH="$PATH:$N_PREFIX/bin"
+export PATH="$N_PREFIX/bin:$PATH"
 
 # Write Functions
 function mkcd() {

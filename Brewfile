@@ -52,6 +52,8 @@ brew "xvid", link: false
 brew "ffmpeg"
 # GNU debugger
 brew "gdb"
+# Distributed revision control system
+brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
