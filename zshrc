@@ -25,6 +25,7 @@ alias mini-3="ssh administrator@198.205.118.162"
 alias gorack="ftp jvollkommer:Vrl-2021@198.205.118.90"
 alias seedbox="ftp seedbox:sbsehct1B!@rain.seedhost.eu"
 alias bbd="brew bundle dump --describe --force"
+alias trail="<<<${(F)path}"
 
 # Customize Prompts
 PROMPT='
