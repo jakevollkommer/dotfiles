@@ -76,6 +76,8 @@ brew "megatools"
 brew "mkvtoolnix"
 # Open source relational database management system
 brew "mysql"
+# Node version management
+brew "n"
 # Platform built on V8 to build network applications
 brew "node"
 # PDF rendering library (based on the xpdf-3.0 code base)

@@ -5,6 +5,8 @@ export PATH="$PATH:~/flutter/bin"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
+export N_PREFIX="$HOME/.n"
+export PREFIX="$N_PREFIX"
 
 # Change ZSH Options
 
@@ -40,6 +42,7 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 #'[\[$(tput sgr0)\]\[\033[38;5;12m\]\t\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]'
 
 # Add Locations to $PATH Variable
+export PATH="$PATH:$N_PREFIX/bin"
 
 # Write Functions
 function mkcd() {
