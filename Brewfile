@@ -42,6 +42,7 @@ tap "homebrew/core"
 # # Play, record, convert, and stream audio and video
 brew "ffmpeg"
 brew "git"
+brew "mas"
 # # GNU debugger
 # brew "gdb"
 # # Git extension for versioning large files
@@ -96,3 +97,4 @@ cask "raycast"
 # cask "osxfuse"
 # # Open-source version of the X.Org X Window System
 # cask "xquartz"
+mas "Xcode", id: 497799835
