@@ -12,7 +12,7 @@ export PREFIX="$N_PREFIX"
 
 # Customize Prompts
 PROMPT='
-%1~ %L %# '
+%~ %# '
 
 RPROMPT='%*'
 export CLICOLOR=1
@@ -31,10 +31,10 @@ path=(
 
 # Create Aliases
 alias ls="exa"
-alias l="exa -GF"
+alias l="exa -lGF"
 alias ll="exa -lah --git"
+alias la="exa -lah --git"
 alias lt="exa -lah --git --tree --level=2"
-alias la="exa -ah"
 alias rm="trash"
 alias cat="bat"
 alias fuck="echo $'it\'s gonna be okay'"
