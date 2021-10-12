@@ -10,6 +10,25 @@ export PREFIX="$N_PREFIX"
 
 # Change ZSH Options
 
+# Customize Prompts
+PROMPT='
+%1~ %L %# '
+
+RPROMPT='%*'
+export CLICOLOR=1
+export LSCOLORS=ExFxBxDxCxegedabagacad
+
+# Apparently zsh PS1 is different from bash PS1?
+#'[\[$(tput sgr0)\]\[\033[38;5;12m\]\t\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]'
+
+# Add Locations to $path Array
+typeset -U path
+
+path=(
+    "$N_PREFIX/bin"
+    $path
+    )
+
 # Create Aliases
 alias ls="exa"
 alias l="exa -GF"
@@ -30,20 +49,6 @@ alias gorack="ftp jvollkommer:Vrl-2021@198.205.118.90"
 alias seedbox="ftp seedbox:sbsehct1B!@rain.seedhost.eu"
 alias bbd="brew bundle dump --describe --force"
 alias trail="<<<'${(F)path}'"
-
-# Customize Prompts
-PROMPT='
-%1~ %L %# '
-
-RPROMPT='%*'
-export CLICOLOR=1
-export LSCOLORS=ExFxBxDxCxegedabagacad
-
-# Apparently zsh PS1 is different from bash PS1?
-#'[\[$(tput sgr0)\]\[\033[38;5;12m\]\t\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]'
-
-# Add Locations to $PATH Variable
-export PATH="$N_PREFIX/bin:$PATH"
 
 # Write Functions
 function mkcd() {
