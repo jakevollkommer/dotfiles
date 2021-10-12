@@ -88,6 +88,8 @@ brew "python@3.8"
 brew "shtool"
 # Internet file retriever
 brew "wget"
+# UNIX shell (command interpreter)
+brew "zsh"
 # A Swift command line tool to extract signed archives
 brew "thii/unxip/unxip"
 # Distribution of the Python and R programming languages for scientific computing
