@@ -5,10 +5,13 @@
 - clean: ['~']
 
 - link:
-  ~/.vim:
-  ~/.vimrc:
-  ~/.zshrc:
-  ~/.gitconfig:
+    ~/.vim:
+    ~/.vimrc:
+    ~/.zshrc:
+    ~/.gitconfig:
+    ~/.config/bat:
+      create: true
+      path: config/bat
 
 - create:
   - ~/Work
