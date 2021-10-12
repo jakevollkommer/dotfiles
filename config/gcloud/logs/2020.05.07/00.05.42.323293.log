@@ -1,0 +1,11 @@
+2020-05-07 00:05:42,324 DEBUG    root            Loaded Command Group: [u'gcloud', u'config']
+2020-05-07 00:05:42,328 DEBUG    root            Loaded Command Group: [u'gcloud', u'config', u'list']
+2020-05-07 00:05:42,330 DEBUG    root            Running [gcloud.config.list] with arguments: [SECTION/PROPERTY: "project"]
+2020-05-07 00:05:42,331 INFO     root            Display format: "config"
+2020-05-07 00:05:42,331 INFO     ___FILE_ONLY___ [core]
+project = bot-containers
+
+2020-05-07 00:05:42,332 INFO     ___FILE_ONLY___ 
+Your active configuration is: [default]
+
+2020-05-07 00:05:42,345 DEBUG    root            Metrics reporting process started...

@@ -1,0 +1,54 @@
+2020-04-28 22:01:12,844 DEBUG    root            Metrics collector initialized...
+2020-04-28 22:01:12,848 DEBUG    root            Loaded Command Group: [u'gcloud', u'components']
+2020-04-28 22:01:12,859 DEBUG    root            Loaded Command Group: [u'gcloud', u'components', u'list']
+2020-04-28 22:01:12,864 DEBUG    root            Running [gcloud.components.list] with arguments: [--quiet: "True"]
+2020-04-28 22:02:12,914 DEBUG    root            Could not fetch [https://dl.google.com/dl/cloudsdk/channels/rapid/components-2.json]
+Traceback (most recent call last):
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/snapshots.py", line 200, in _DictFromURL
+    response = installers.ComponentInstaller.MakeRequest(url, command_path)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 296, in MakeRequest
+    return ComponentInstaller._RawRequest(req, timeout=timeout)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 340, in _RawRequest
+    should_retry_if=RetryIf, sleep_ms=500)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/util/retry.py", line 181, in RetryOnException
+    exceptions.reraise(exc_info[1], tb=exc_info[2])
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py", line 146, in reraise
+    six.reraise(type(exc_value), exc_value, tb)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/util/retry.py", line 162, in TryFunc
+    return func(*args, **kwargs), None
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/url_opener.py", line 80, in urlopen
+    return opener.open(req, data, timeout)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 429, in open
+    response = self._open(req, data)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 447, in _open
+    '_open', req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 407, in _call_chain
+    result = func(*args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/url_opener.py", line 64, in https_open
+    return self.do_open(build, req)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/urllib2.py", line 1198, in do_open
+    raise URLError(err)
+URLError: <urlopen error timed out>
+2020-04-28 22:02:12,921 DEBUG    root            (gcloud.components.list) Failed to fetch component listing from server. Check your network settings and try again.
+Traceback (most recent call last):
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 807, in Run
+    resources = command_instance.Run(args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/surface/components/list.py", line 93, in Run
+    only_local_state=args.only_local_state)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 677, in List
+    to_print, current_version, latest_version = self._GetPrintListWithDiff()
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 707, in _GetPrintListWithDiff
+    _, diff = self._GetStateAndDiff(command_path='components.list')
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 609, in _GetStateAndDiff
+    command_path=command_path)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 592, in _GetLatestSnapshot
+    *effective_url.split(','), command_path=command_path)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/snapshots.py", line 179, in FromURLs
+    for url in urls]
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/core/updater/snapshots.py", line 211, in _DictFromURL
+    raise URLFetchError(extra_repo=extra_repo)
+URLFetchError: Failed to fetch component listing from server. Check your network settings and try again.
+2020-04-28 22:02:12,924 ERROR    root            (gcloud.components.list) Failed to fetch component listing from server. Check your network settings and try again.
+2020-04-28 22:02:12,988 DEBUG    root            Metrics reporting process started...

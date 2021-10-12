@@ -1,0 +1,8 @@
+2020-05-06 23:58:08,851 DEBUG    root            Loaded Command Group: [u'gcloud', u'components']
+2020-05-06 23:58:08,855 DEBUG    root            Loaded Command Group: [u'gcloud', u'components', u'update']
+2020-05-06 23:58:08,859 DEBUG    root            Running [gcloud.components.update] with arguments: []
+2020-05-06 23:58:09,165 INFO     ___FILE_ONLY___ 
+
+Command killed by keyboard interrupt
+
+

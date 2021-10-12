@@ -1,0 +1,48 @@
+2020-05-07 00:31:56,619 DEBUG    root            Loaded Command Group: [u'gcloud', u'projects']
+2020-05-07 00:31:56,652 DEBUG    root            Loaded Command Group: [u'gcloud', u'projects', u'add_iam_policy_binding']
+2020-05-07 00:31:56,656 DEBUG    root            Running [gcloud.projects.add-iam-policy-binding] with arguments: [--member: "serviceAccount:osrs-bot-farm@bot-farm-osrs.iam.gserviceaccount.com", --role: "roles/owner", PROJECT_ID: "bot-farm-osrs"]
+2020-05-07 00:31:59,414 INFO     ___FILE_ONLY___ Updated IAM policy for project [bot-farm-osrs].
+
+2020-05-07 00:31:59,417 INFO     root            Display format: "default"
+2020-05-07 00:31:59,423 INFO     ___FILE_ONLY___ bindings
+2020-05-07 00:31:59,424 INFO     ___FILE_ONLY___ :
+2020-05-07 00:31:59,424 INFO     ___FILE_ONLY___ 
+
+2020-05-07 00:31:59,424 INFO     ___FILE_ONLY___ -
+2020-05-07 00:31:59,424 INFO     ___FILE_ONLY___  
+2020-05-07 00:31:59,425 INFO     ___FILE_ONLY___ members
+2020-05-07 00:31:59,425 INFO     ___FILE_ONLY___ :
+2020-05-07 00:31:59,425 INFO     ___FILE_ONLY___ 
+
+2020-05-07 00:31:59,425 INFO     ___FILE_ONLY___   
+2020-05-07 00:31:59,425 INFO     ___FILE_ONLY___ -
+2020-05-07 00:31:59,426 INFO     ___FILE_ONLY___  
+2020-05-07 00:31:59,426 INFO     ___FILE_ONLY___ serviceAccount:osrs-bot-farm@bot-farm-osrs.iam.gserviceaccount.com
+2020-05-07 00:31:59,426 INFO     ___FILE_ONLY___ 
+
+2020-05-07 00:31:59,426 INFO     ___FILE_ONLY___   
+2020-05-07 00:31:59,427 INFO     ___FILE_ONLY___ -
+2020-05-07 00:31:59,427 INFO     ___FILE_ONLY___  
+2020-05-07 00:31:59,427 INFO     ___FILE_ONLY___ user:osrs.bot.rental@gmail.com
+2020-05-07 00:31:59,427 INFO     ___FILE_ONLY___ 
+
+2020-05-07 00:31:59,427 INFO     ___FILE_ONLY___   
+2020-05-07 00:31:59,427 INFO     ___FILE_ONLY___ role
+2020-05-07 00:31:59,428 INFO     ___FILE_ONLY___ :
+2020-05-07 00:31:59,428 INFO     ___FILE_ONLY___  
+2020-05-07 00:31:59,428 INFO     ___FILE_ONLY___ roles/owner
+2020-05-07 00:31:59,428 INFO     ___FILE_ONLY___ 
+
+2020-05-07 00:31:59,428 INFO     ___FILE_ONLY___ etag
+2020-05-07 00:31:59,428 INFO     ___FILE_ONLY___ :
+2020-05-07 00:31:59,428 INFO     ___FILE_ONLY___  
+2020-05-07 00:31:59,428 INFO     ___FILE_ONLY___ BwWk-6B0iZM=
+2020-05-07 00:31:59,429 INFO     ___FILE_ONLY___ 
+
+2020-05-07 00:31:59,429 INFO     ___FILE_ONLY___ version
+2020-05-07 00:31:59,429 INFO     ___FILE_ONLY___ :
+2020-05-07 00:31:59,429 INFO     ___FILE_ONLY___  
+2020-05-07 00:31:59,429 INFO     ___FILE_ONLY___ 1
+2020-05-07 00:31:59,429 INFO     ___FILE_ONLY___ 
+
+2020-05-07 00:31:59,448 DEBUG    root            Metrics reporting process started...

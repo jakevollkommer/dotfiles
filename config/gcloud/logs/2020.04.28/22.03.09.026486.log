@@ -1,0 +1,33 @@
+2020-04-28 22:03:09,050 DEBUG    root            Loaded Command Group: [u'gcloud', u'init']
+2020-04-28 22:03:09,053 DEBUG    root            Running [gcloud.init] with arguments: []
+2020-04-28 22:03:09,053 INFO     ___FILE_ONLY___ Welcome! This command will take you through the configuration of gcloud.
+
+
+2020-04-28 22:03:09,056 INFO     ___FILE_ONLY___ Your current configuration has been set to: [default]
+
+
+2020-04-28 22:03:09,056 INFO     ___FILE_ONLY___ You can skip diagnostics next time by using the following flag:
+
+2020-04-28 22:03:09,057 INFO     ___FILE_ONLY___   gcloud init --skip-diagnostics
+
+
+2020-04-28 22:03:09,057 INFO     ___FILE_ONLY___ Network diagnostic detects and fixes local network connection issues.
+
+2020-04-28 22:03:09,058 INFO     ___FILE_ONLY___ Checking network connection...
+2020-04-28 22:04:29,631 ERROR    root            Reachability Check failed.
+    Cannot reach https://www.google.com (ResponseNotReady)
+Network connection problems may be due to proxy or firewall settings.
+
+2020-04-28 22:04:29,633 INFO     ___FILE_ONLY___ 
+
+2020-04-28 22:04:39,811 ERROR    root            Network diagnostic failed (0/1 checks passed).
+
+2020-04-28 22:04:46,515 INFO     ___FILE_ONLY___ You can re-run diagnostics with the following command:
+
+2020-04-28 22:04:46,516 INFO     ___FILE_ONLY___   gcloud info --run-diagnostics
+
+
+2020-04-28 22:04:46,523 INFO     root            Display format: "default"
+2020-04-28 22:04:46,525 DEBUG    root            Checking for updates...
+2020-04-28 22:04:47,564 DEBUG    root            Updating notification cache...
+2020-04-28 22:04:47,576 DEBUG    root            Metrics reporting process started...

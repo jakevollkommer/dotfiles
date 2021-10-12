@@ -1,0 +1,149 @@
+2020-04-28 22:04:52,688 DEBUG    root            Loaded Command Group: [u'gcloud', u'init']
+2020-04-28 22:04:52,693 DEBUG    root            Running [gcloud.init] with arguments: []
+2020-04-28 22:04:52,693 INFO     ___FILE_ONLY___ Welcome! This command will take you through the configuration of gcloud.
+
+
+2020-04-28 22:04:52,696 INFO     ___FILE_ONLY___ Your current configuration has been set to: [default]
+
+
+2020-04-28 22:04:52,696 INFO     ___FILE_ONLY___ You can skip diagnostics next time by using the following flag:
+
+2020-04-28 22:04:52,696 INFO     ___FILE_ONLY___   gcloud init --skip-diagnostics
+
+
+2020-04-28 22:04:52,696 INFO     ___FILE_ONLY___ Network diagnostic detects and fixes local network connection issues.
+
+2020-04-28 22:04:52,699 INFO     ___FILE_ONLY___ Checking network connection...
+2020-04-28 22:04:57,966 INFO     ___FILE_ONLY___ Reachability Check passed.
+
+2020-04-28 22:04:57,966 INFO     ___FILE_ONLY___ Network diagnostic passed (1/1 checks passed).
+
+
+2020-04-28 22:05:02,274 DEBUG    root            Loaded Command Group: [u'gcloud', u'auth']
+2020-04-28 22:05:02,414 DEBUG    root            Loaded Command Group: [u'gcloud', u'auth', u'login']
+2020-04-28 22:05:02,417 INFO     root            Executing: [gcloud auth login --force --brief]
+2020-04-28 22:05:02,419 DEBUG    root            Running [gcloud.auth.login] with arguments: [--brief: "True", --force: "True"]
+2020-04-28 22:05:02,422 DEBUG    requests_oauthlib.oauth2_session Generated new state f84keKllVrVn8tQ8MxFfxgWw8tRkAI.
+2020-04-28 22:05:02,624 INFO     ___FILE_ONLY___ Your browser has been opened to visit:
+
+    https://accounts.google.com/o/oauth2/auth?response_type=code&client_id=32555940559.apps.googleusercontent.com&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F&scope=openid+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcloud-platform+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fappengine.admin+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fcompute+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Faccounts.reauth&state=f84keKllVrVn8tQ8MxFfxgWw8tRkAI&code_challenge=4T0bv2bEH_QAbQJFapwu_lLz52PMA4ldmA_ZvfuxmyU&code_challenge_method=S256&access_type=offline
+
+
+2020-04-28 22:05:15,050 INFO     google_auth_oauthlib.flow "GET /?state=f84keKllVrVn8tQ8MxFfxgWw8tRkAI&code=4/zAE2h9XH8oR_wolGHUqJv4cwAMGl_PIANJZq5rw-iJxq8M6pB24GdSNsxkSIXa-UcYVgt45xUUiQLcxUAkvpesg&scope=email%20openid%20https://www.googleapis.com/auth/userinfo.email%20https://www.googleapis.com/auth/cloud-platform%20https://www.googleapis.com/auth/appengine.admin%20https://www.googleapis.com/auth/compute%20https://www.googleapis.com/auth/accounts.reauth&authuser=1&prompt=consent HTTP/1.1" 200 959
+2020-04-28 22:05:15,052 DEBUG    requests_oauthlib.oauth2_session Encoding `client_id` "32555940559.apps.googleusercontent.com" with `client_secret` as Basic auth credentials.
+2020-04-28 22:05:15,053 DEBUG    requests_oauthlib.oauth2_session Requesting url https://www.googleapis.com/oauth2/v4/token using method POST.
+2020-04-28 22:05:15,053 DEBUG    requests_oauthlib.oauth2_session Supplying headers {u'Content-Type': u'application/x-www-form-urlencoded;charset=UTF-8', u'Accept': u'application/json'} and data {u'code': u'4/zAE2h9XH8oR_wolGHUqJv4cwAMGl_PIANJZq5rw-iJxq8M6pB24GdSNsxkSIXa-UcYVgt45xUUiQLcxUAkvpesg', u'code_verifier': u'7SUqrk~cGcV28YHmtkQwxRdwUCzM0CviMxZWjxJ~EX7PZSbl1Uxrn0_BFMfHSvb85n2u.IdR7pRMpT3O0b-g.IZlYNWfs-alt0sqZbDd0bLcXuHDeNI1p0q_B4cYZ0Ep', u'grant_type': u'authorization_code', u'redirect_uri': u'http://localhost:8085/'}
+2020-04-28 22:05:15,053 DEBUG    requests_oauthlib.oauth2_session Passing through key word arguments {'verify': True, 'json': None, 'proxies': None, 'timeout': None, 'auth': <requests.auth.HTTPBasicAuth object at 0x10bfa4f90>}.
+2020-04-28 22:05:15,059 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): www.googleapis.com:443
+2020-04-28 22:05:15,798 DEBUG    urllib3.connectionpool https://www.googleapis.com:443 "POST /oauth2/v4/token HTTP/1.1" 200 None
+2020-04-28 22:05:15,799 DEBUG    requests_oauthlib.oauth2_session Prepared fetch token request body grant_type=authorization_code&code_verifier=7SUqrk%7EcGcV28YHmtkQwxRdwUCzM0CviMxZWjxJ%7EEX7PZSbl1Uxrn0_BFMfHSvb85n2u.IdR7pRMpT3O0b-g.IZlYNWfs-alt0sqZbDd0bLcXuHDeNI1p0q_B4cYZ0Ep&code=4%2FzAE2h9XH8oR_wolGHUqJv4cwAMGl_PIANJZq5rw-iJxq8M6pB24GdSNsxkSIXa-UcYVgt45xUUiQLcxUAkvpesg&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F
+2020-04-28 22:05:15,799 DEBUG    requests_oauthlib.oauth2_session Request to fetch token completed with status 200.
+2020-04-28 22:05:15,800 DEBUG    requests_oauthlib.oauth2_session Request headers were {'Content-Length': '319', 'Accept-Encoding': 'gzip, deflate', 'Accept': u'application/json', 'User-Agent': 'python-requests/2.22.0', 'Connection': 'keep-alive', 'Content-Type': u'application/x-www-form-urlencoded;charset=UTF-8', 'Authorization': 'Basic MzI1NTU5NDA1NTkuYXBwcy5nb29nbGV1c2VyY29udGVudC5jb206Wm1zc0xOakp5Mjk5OGhENENUZzJlanIy'}
+2020-04-28 22:05:15,800 DEBUG    requests_oauthlib.oauth2_session Request body was code=4%2FzAE2h9XH8oR_wolGHUqJv4cwAMGl_PIANJZq5rw-iJxq8M6pB24GdSNsxkSIXa-UcYVgt45xUUiQLcxUAkvpesg&code_verifier=7SUqrk%7EcGcV28YHmtkQwxRdwUCzM0CviMxZWjxJ%7EEX7PZSbl1Uxrn0_BFMfHSvb85n2u.IdR7pRMpT3O0b-g.IZlYNWfs-alt0sqZbDd0bLcXuHDeNI1p0q_B4cYZ0Ep&grant_type=authorization_code&redirect_uri=http%3A%2F%2Flocalhost%3A8085%2F
+2020-04-28 22:05:15,800 DEBUG    requests_oauthlib.oauth2_session Response headers were {'X-XSS-Protection': '0', 'X-Content-Type-Options': 'nosniff', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Vary': 'Origin, X-Origin, Referer', 'Server': 'scaffolding on HTTPServer2', 'Cache-Control': 'private', 'Date': 'Tue, 28 Apr 2020 12:05:15 GMT', 'X-Frame-Options': 'SAMEORIGIN', 'Alt-Svc': 'quic=":443"; ma=2592000; v="46,43",h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,h3-T050=":443"; ma=2592000', 'Content-Type': 'application/json; charset=utf-8'} and content {
+  "access_token": "ya29.a0Ae4lvC0GCeITbQCWrQ0zUOTPFOc3vwn1qsK4y1rJUts3rQSQJCb9Bzpdqj3I3UDdasJgifcUifsQyixX_sJwRhZCPIJT6by4YKZwyDFkpdFY1pJZaLq8CPDPImLj4scFXq8er33BBPROMGt4k5MiM226FN_K0wQM-9QdHJTaJkg",
+  "expires_in": 3599,
+  "refresh_token": "1//0ghDDNEY_Wm4SCgYIARAAGBASNgF-L9IrzguVfYogo2xriIV4G43OB6Oto85n93_6IEkYjV97KFrnAz8O4dBbWe6qb14HZt7i9g",
+  "scope": "openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/accounts.reauth https://www.googleapis.com/auth/appengine.admin https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/compute",
+  "token_type": "Bearer",
+  "id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjI4Yjc0MWU4ZGU5ODRhNDcxNTlmMTllNmQ3NzgzZTlkNGZhODEwZGIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTAxMzEzNDU2NjQ3MjcyNjk3MTkwIiwiZW1haWwiOiJvc3JzLmJvdC5yZW50YWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJTY3FWX1h5ZFdDdDVXc3hwQ2N1UzNnIiwiaWF0IjoxNTg4MDc1NTE1LCJleHAiOjE1ODgwNzkxMTV9.FLL6ppiOdaq8CynlislybtRur82G4_XBts5XU7DJHo_fWW7_uvIiIaq-HHsgsd9Qop7-zowPIky-7akBJGuH8P0lrayUscbs0W2lU6uvhc2AMH0xGttDNZwCm4yOVxSa65ytC5KaGDhjH0706oYPP1PU9WKWz7rthT1Nk0TufS024aQLSonF5okT820BDZ7iw4s2e-5OAuPmrFPvKMpwJWAuTSFKZrg3LUmmCNycD_RwXywQSdurLjowjWGS4-1WNJr4JQfo034oG_MsI5cYZBY5ODcbFBVfw9bYAoFwM64m6Dxl4g9KhIgNMdEenK_f-yRz-BEBY4qDHU2O_dJh3w"
+}.
+2020-04-28 22:05:15,801 DEBUG    requests_oauthlib.oauth2_session Invoking 0 token response hooks.
+2020-04-28 22:05:15,801 DEBUG    requests_oauthlib.oauth2_session Obtained token {u'token_type': u'Bearer', u'refresh_token': u'1//0ghDDNEY_Wm4SCgYIARAAGBASNgF-L9IrzguVfYogo2xriIV4G43OB6Oto85n93_6IEkYjV97KFrnAz8O4dBbWe6qb14HZt7i9g', u'scope': [u'openid', u'https://www.googleapis.com/auth/userinfo.email', u'https://www.googleapis.com/auth/accounts.reauth', u'https://www.googleapis.com/auth/appengine.admin', u'https://www.googleapis.com/auth/cloud-platform', u'https://www.googleapis.com/auth/compute'], u'access_token': u'ya29.a0Ae4lvC0GCeITbQCWrQ0zUOTPFOc3vwn1qsK4y1rJUts3rQSQJCb9Bzpdqj3I3UDdasJgifcUifsQyixX_sJwRhZCPIJT6by4YKZwyDFkpdFY1pJZaLq8CPDPImLj4scFXq8er33BBPROMGt4k5MiM226FN_K0wQM-9QdHJTaJkg', u'id_token': u'eyJhbGciOiJSUzI1NiIsImtpZCI6IjI4Yjc0MWU4ZGU5ODRhNDcxNTlmMTllNmQ3NzgzZTlkNGZhODEwZGIiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJhenAiOiIzMjU1NTk0MDU1OS5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsImF1ZCI6IjMyNTU1OTQwNTU5LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTAxMzEzNDU2NjQ3MjcyNjk3MTkwIiwiZW1haWwiOiJvc3JzLmJvdC5yZW50YWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOnRydWUsImF0X2hhc2giOiJTY3FWX1h5ZFdDdDVXc3hwQ2N1UzNnIiwiaWF0IjoxNTg4MDc1NTE1LCJleHAiOjE1ODgwNzkxMTV9.FLL6ppiOdaq8CynlislybtRur82G4_XBts5XU7DJHo_fWW7_uvIiIaq-HHsgsd9Qop7-zowPIky-7akBJGuH8P0lrayUscbs0W2lU6uvhc2AMH0xGttDNZwCm4yOVxSa65ytC5KaGDhjH0706oYPP1PU9WKWz7rthT1Nk0TufS024aQLSonF5okT820BDZ7iw4s2e-5OAuPmrFPvKMpwJWAuTSFKZrg3LUmmCNycD_RwXywQSdurLjowjWGS4-1WNJr4JQfo034oG_MsI5cYZBY5ODcbFBVfw9bYAoFwM64m6Dxl4g9KhIgNMdEenK_f-yRz-BEBY4qDHU2O_dJh3w', u'expires_in': 3599, u'expires_at': 1588079114.801372}.
+2020-04-28 22:05:15,811 INFO     root            Display format: "none"
+2020-04-28 22:05:15,817 INFO     ___FILE_ONLY___ You are logged in as: [osrs.bot.rental@gmail.com].
+
+
+2020-04-28 22:06:20,146 INFO     ___FILE_ONLY___ Your current project has been set to: [bot-containers].
+
+
+2020-04-28 22:06:20,266 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute']
+2020-04-28 22:06:20,270 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'project_info']
+2020-04-28 22:06:20,305 DEBUG    root            Loaded Command Group: [u'gcloud', u'compute', u'project-info', u'describe']
+2020-04-28 22:06:20,306 INFO     root            Executing: [gcloud compute project-info describe --quiet]
+2020-04-28 22:06:20,310 DEBUG    root            Running [gcloud.compute.project-info.describe] with arguments: [--no-user-output-enabled: "false", --quiet: "True", --verbosity: "none"]
+2020-04-28 22:06:21,713 DEBUG    root            (gcloud.compute.project-info.describe) HTTPError 403: Access Not Configured. Compute Engine API has not been used in project 697443846276 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=697443846276 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+Traceback (most recent call last):
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 807, in Run
+    resources = command_instance.Run(args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/surface/compute/project_info/describe.py", line 39, in Run
+    project=project_ref.projectId))])[0]
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/client_adapter.py", line 98, in MakeRequests
+    timeout=timeout))
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/request_helper.py", line 261, in MakeRequests
+    requests=requests, http=http, batch_url=batch_url)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/batch_helper.py", line 106, in MakeRequests
+    batch_request_callback=batch_checker.BatchCheck)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/./lib/third_party/apitools/base/py/batch.py", line 226, in Execute
+    batch_http_request.Execute(http)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/./lib/third_party/apitools/base/py/batch.py", line 506, in Execute
+    self.__callback(response, exception)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/api_lib/compute/batch_helper.py", line 73, in BatchCheck
+    is_batch_request=True)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/api_lib/util/apis.py", line 261, in PromptToEnableApi
+    raise exception
+HttpException: HTTPError 403: Access Not Configured. Compute Engine API has not been used in project 697443846276 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=697443846276 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+2020-04-28 22:06:21,716 ERROR    root            (gcloud.compute.project-info.describe) HTTPError 403: Access Not Configured. Compute Engine API has not been used in project 697443846276 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/compute.googleapis.com/overview?project=697443846276 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+2020-04-28 22:06:21,728 INFO     root            [compute project-info describe --quiet] has failed
+
+2020-04-28 22:06:21,728 INFO     ___FILE_ONLY___ Not setting default zone/region (this feature makes it easier to use
+[gcloud compute] by setting an appropriate default value for the
+--zone and --region flag).
+See https://cloud.google.com/compute/docs/gcloud-compute section on how to set
+default compute region and zone manually. If you would like [gcloud init] to be
+able to do this for you the next time you run it, make sure the
+Compute Engine API is enabled for your project on the
+https://console.developers.google.com/apis page.
+
+
+2020-04-28 22:06:21,729 DEBUG    root            Executing command: [u'/Users/jakevollkommer/Downloads/google-cloud-sdk/bin/gsutil', u'config', u'-n', u'-o', u'/Users/jakevollkommer/.boto']
+2020-04-28 22:07:06,994 DEBUG    ___FILE_ONLY___ 
+2020-04-28 22:07:06,995 DEBUG    ___FILE_ONLY___ This command will create a boto config file at
+/Users/jakevollkommer/.boto containing your credentials, based on your
+responses to the following questions.
+
+Boto config file "/Users/jakevollkommer/.boto" created. If you need to
+use a proxy to access the Internet please see the instructions in that
+file.
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/platform/gsutil/gslib/__init__.py", line 153, in <module>
+    CHECKSUM_FILE, CHECKSUM = _GetFileContents('CHECKSUM')
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/platform/gsutil/gslib/__init__.py", line 136, in _GetFileContents
+    content = pkgutil.get_data('gslib', filename)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/pkgutil.py", line 589, in get_data
+    return loader.get_data(resource_name)
+  File "/System/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/pkgutil.py", line 252, in get_data
+    with open(pathname, "rb") as file:
+IOError: [Errno 2] No such file or directory: u'/Users/jakevollkommer/Downloads/google-cloud-sdk/platform/gsutil/gslib/CHECKSUM'
+
+2020-04-28 22:07:06,996 INFO     ___FILE_ONLY___ Created a default .boto configuration file at [/Users/jakevollkommer/.boto]. See this file and
+[https://cloud.google.com/storage/docs/gsutil/commands/config] for more
+information about configuring Google Cloud Storage.
+
+2020-04-28 22:07:06,996 INFO     ___FILE_ONLY___ Your Google Cloud SDK is configured and ready to use!
+
+
+2020-04-28 22:07:06,997 INFO     ___FILE_ONLY___ * Commands that require authentication will use osrs.bot.rental@gmail.com by default
+
+2020-04-28 22:07:06,997 INFO     ___FILE_ONLY___ * Commands will reference project `bot-containers` by default
+
+2020-04-28 22:07:06,998 INFO     ___FILE_ONLY___ Run `gcloud help config` to learn how to change individual settings
+
+
+2020-04-28 22:07:06,998 INFO     ___FILE_ONLY___ This gcloud configuration is called [default]. You can create additional configurations if you work with multiple accounts and/or projects.
+
+2020-04-28 22:07:06,998 INFO     ___FILE_ONLY___ Run `gcloud topic configurations` to learn more.
+
+
+2020-04-28 22:07:06,999 INFO     ___FILE_ONLY___ Some things to try next:
+
+
+2020-04-28 22:07:06,999 INFO     ___FILE_ONLY___ * Run `gcloud --help` to see the Cloud Platform services you can interact with. And run `gcloud help COMMAND` to get help on any gcloud command.
+
+2020-04-28 22:07:07,000 INFO     ___FILE_ONLY___ * Run `gcloud topic --help` to learn about advanced features of the SDK like arg files and output formatting
+
+2020-04-28 22:07:07,005 INFO     root            Display format: "default"
+2020-04-28 22:07:07,021 DEBUG    root            Metrics reporting process started...

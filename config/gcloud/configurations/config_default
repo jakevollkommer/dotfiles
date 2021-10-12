@@ -1,0 +1,7 @@
+[core]
+account = osrs.bot.rental@gmail.com
+project = bot-containers
+
+[accessibility]
+screen_reader = true
+

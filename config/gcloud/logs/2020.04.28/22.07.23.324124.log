@@ -1,0 +1,7 @@
+2020-04-28 22:07:23,326 DEBUG    root            Loaded Command Group: [u'gcloud', u'config']
+2020-04-28 22:07:23,336 DEBUG    root            Loaded Command Group: [u'gcloud', u'config', u'set']
+2020-04-28 22:07:23,340 DEBUG    root            Running [gcloud.config.set] with arguments: [SECTION/PROPERTY: "accessibility/screen_reader", VALUE: "true"]
+2020-04-28 22:07:23,341 INFO     ___FILE_ONLY___ Updated property [accessibility/screen_reader].
+
+2020-04-28 22:07:23,343 INFO     root            Display format: "default"
+2020-04-28 22:07:23,356 DEBUG    root            Metrics reporting process started...

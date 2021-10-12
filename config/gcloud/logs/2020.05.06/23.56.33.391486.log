@@ -1,0 +1,19 @@
+2020-05-06 23:56:33,393 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam']
+2020-05-06 23:56:33,397 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service_accounts']
+2020-05-06 23:56:33,404 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service-accounts', u'create']
+2020-05-06 23:56:33,407 DEBUG    root            Running [gcloud.iam.service-accounts.create] with arguments: [NAME: "osrs-bot-farm"]
+2020-05-06 23:56:33,418 INFO     oauth2client.client Refreshing access_token
+2020-05-06 23:56:37,490 INFO     ___FILE_ONLY___ Created service account [osrs-bot-farm].
+
+2020-05-06 23:56:37,491 INFO     root            Display format: "none"
+2020-05-06 23:56:37,495 DEBUG    root            Checking for updates...
+2020-05-06 23:56:38,352 DEBUG    root            Updating notification cache...
+2020-05-06 23:56:38,353 DEBUG    root            Activating notification: [default]
+2020-05-06 23:56:38,353 INFO     ___FILE_ONLY___ 
+
+Updates are available for some Cloud SDK components.  To install them,
+please run:
+  $ gcloud components update
+
+
+2020-05-06 23:56:38,365 DEBUG    root            Metrics reporting process started...

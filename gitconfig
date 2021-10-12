@@ -1,0 +1,23 @@
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	required = true
+	process = git-lfs filter-process
+[user]
+	name = jakevollkommer
+	email = 7663746+jakevollkommer@users.noreply.github.com
+[push]
+    default = simple
+[alias]
+        lol = log --graph --decorate --pretty=oneline --abbrev-commit
+        lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[color]
+        branch = auto
+        diff = auto
+        interactive = auto
+        status = auto
+[credential]
+	helper = osxkeychain
+[http]
+	postBuffer = 100000000
+	version = HTTP/2

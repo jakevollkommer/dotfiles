@@ -1,0 +1,7 @@
+2020-05-07 00:13:06,583 DEBUG    root            Loaded Command Group: [u'gcloud', u'config']
+2020-05-07 00:13:06,587 DEBUG    root            Loaded Command Group: [u'gcloud', u'config', u'list']
+2020-05-07 00:13:06,589 DEBUG    root            Running [gcloud.config.list] with arguments: [--format: "value(core.account)", SECTION/PROPERTY: "account"]
+2020-05-07 00:13:06,590 INFO     root            Display format: "config value(core.account)"
+2020-05-07 00:13:06,591 INFO     ___FILE_ONLY___ osrs.bot.rental@gmail.com
+
+2020-05-07 00:13:06,602 DEBUG    root            Metrics reporting process started...

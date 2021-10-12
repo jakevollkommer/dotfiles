@@ -1,0 +1,31 @@
+2020-05-07 00:14:16,004 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam']
+2020-05-07 00:14:16,007 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service_accounts']
+2020-05-07 00:14:16,009 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service-accounts', u'keys']
+2020-05-07 00:14:16,012 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service-accounts', u'keys', u'create']
+2020-05-07 00:14:16,016 DEBUG    root            Running [gcloud.iam.service-accounts.keys.create] with arguments: [--iam-account: "osrs.bot.rental@gmail.com@bot-farm-osrs.iam.gserviceaccount.com", OUTPUT-FILE: "/Users/jakevollkommer/google/authkey.json"]
+2020-05-07 00:14:16,479 DEBUG    root            (gcloud.iam.service-accounts.keys.create) INVALID_ARGUMENT: Invalid service account email (osrs.bot.rental@gmail.com@bot-farm-osrs.iam.gserviceaccount.com).
+Traceback (most recent call last):
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 807, in Run
+    resources = command_instance.Run(args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/surface/iam/service_accounts/keys/create.py", line 75, in Run
+    iam_util.KeyTypeFromString(args.key_file_type)))))
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/third_party/apis/iam/v1/iam_v1_client.py", line 675, in Create
+    config, request, global_params=global_params)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 731, in _RunMethod
+    return self.ProcessHttpResponse(method_config, http_response, request)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 737, in ProcessHttpResponse
+    self.__ProcessHttpResponse(method_config, http_response, request))
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/third_party/apitools/base/py/base_api.py", line 604, in __ProcessHttpResponse
+    http_response, method_config=method_config, request=request)
+HttpBadRequestError: HttpError accessing <https://iam.googleapis.com/v1/projects/-/serviceAccounts/osrs.bot.rental@gmail.com@bot-farm-osrs.iam.gserviceaccount.com/keys?alt=json>: response: <{'status': '400', 'content-length': '186', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Wed, 06 May 2020 14:14:16 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 400,
+    "message": "Invalid service account email (osrs.bot.rental@gmail.com@bot-farm-osrs.iam.gserviceaccount.com).",
+    "status": "INVALID_ARGUMENT"
+  }
+}
+>
+2020-05-07 00:14:16,485 ERROR    root            (gcloud.iam.service-accounts.keys.create) INVALID_ARGUMENT: Invalid service account email (osrs.bot.rental@gmail.com@bot-farm-osrs.iam.gserviceaccount.com).
+2020-05-07 00:14:16,505 DEBUG    root            Metrics reporting process started...

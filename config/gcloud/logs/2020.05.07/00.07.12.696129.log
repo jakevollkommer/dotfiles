@@ -1,0 +1,8 @@
+2020-05-07 00:07:12,697 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam']
+2020-05-07 00:07:12,700 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service_accounts']
+2020-05-07 00:07:12,704 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service-accounts', u'create']
+2020-05-07 00:07:12,707 DEBUG    root            Running [gcloud.iam.service-accounts.create] with arguments: [--project: "bot-farm-276414", NAME: "osrs-bot-farm"]
+2020-05-07 00:07:13,804 INFO     ___FILE_ONLY___ Created service account [osrs-bot-farm].
+
+2020-05-07 00:07:13,805 INFO     root            Display format: "none"
+2020-05-07 00:07:13,827 DEBUG    root            Metrics reporting process started...

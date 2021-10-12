@@ -1,0 +1,85 @@
+{
+	"motd": {
+		"cloudBuildErrorAfter": 1594252800000,
+		"cloudBuildWarnAfter": 1590019200000,
+		"defaultNode10After": 1594252800000,
+		"minVersion": "3.0.5",
+		"node8DeploysDisabledAfter": 1613390400000,
+		"node8RuntimeDisabledAfter": 1615809600000,
+		"node8WarnAfter": 1600128000000,
+		"fetched": 1633476025157
+	},
+	"activeProjects": {
+		"/Users/jakevollkommer/VibeCheck/VibeCheck/backend/algolia/FirebaseAlgoliaServer": "vibecheck-2c4ab",
+		"/Users/jakevollkommer/VibeCheck/VibeCheck/backend/algolia": "vibecheck-2c4ab",
+		"/Users/jakevollkommer/VibeCheck/VibeCheck/backend/search": "vibecheck-2c4ab",
+		"/Users/jakevollkommer/VRLink/VRLink/Web": "vrlink-95643",
+		"/Users/jakevollkommer/VRLink/Microsites": "vrlink-event-microsites",
+		"/Users/jakevollkommer/VRLink/Microsites/vrlink-microsites": "vrlink-microsites"
+	},
+	"analytics-uuid": "44f3b6b6-fdb5-4404-96ce-ca0c73df6780",
+	"usage": true,
+	"user": {
+		"iss": "accounts.google.com",
+		"azp": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"aud": "563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com",
+		"sub": "112077112818609935025",
+		"email": "jakevollkommer@gmail.com",
+		"email_verified": true,
+		"at_hash": "mf315yDs4F9v7qD8heu32Q",
+		"iat": 1632439742,
+		"exp": 1632443342
+	},
+	"tokens": {
+		"expires_at": 1633496144449,
+		"refresh_token": "1//0gci1Nmwnn49rCgYIARAAGBASNwF-L9IrDrnns-u4C58cQavNX5C5bV1cyD5eAEtOxC1WROFHORrUdajJNK8s-EsjUML01ggu4UA",
+		"scopes": [
+			"email",
+			"https://www.googleapis.com/auth/cloud-platform",
+			"https://www.googleapis.com/auth/cloudplatformprojects.readonly",
+			"https://www.googleapis.com/auth/firebase",
+			"openid"
+		],
+		"access_token": "ya29.a0ARrdaM9YZZfqQEzv7OBR-8xyatTqK7FAqCCkFLE4tW4sPpWd3Z-f4Qf_ic4yITYh4LbewXIvedCxMsOepAd7IQcBIyPRrj6030_BnBCdotskOzLhanTnmH-49zoy7ydsM_tgBDLNyIFqlmxpOcaMCvKOzMsK4mlHERm4kA",
+		"expires_in": 3599,
+		"scope": "https://www.googleapis.com/auth/userinfo.email openid https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase https://www.googleapis.com/auth/cloud-platform",
+		"token_type": "Bearer",
+		"id_token": "eyJhbGciOiJSUzI1NiIsImtpZCI6IjhkOTI5YzYzZmYxMDgyYmJiOGM5OWY5OTRmYTNmZjRhZGFkYTJkMTEiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJhY2NvdW50cy5nb29nbGUuY29tIiwiYXpwIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwiYXVkIjoiNTYzNTg0MzM1ODY5LWZncmhnbWQ0N2JxbmVraWo1aThiNXByMDNobzg0OWU2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwic3ViIjoiMTEyMDc3MTEyODE4NjA5OTM1MDI1IiwiZW1haWwiOiJqYWtldm9sbGtvbW1lckBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXRfaGFzaCI6IjVNeGVES3YxdXFjeE1pb2ltSlVKd3ciLCJpYXQiOjE2MzM0OTI1NDUsImV4cCI6MTYzMzQ5NjE0NX0.UOyf_9iljhZ6wn9jeRHrjNgdBPRKWFQ_s1-ikL0C6HqXI2WJU0XyHjVAgESEpQN0743aVQLahp13OzZeCN0elsCFJHxiSjrxParIUMrLd_rLzpQ9wVI44zavZfy03eUpD4Oytz0b1sagN704yz8Pj11rpT9-zrCrvtFAyv-hZzMq-2EXgTaD54ZXzJHuMrmDcKmtpfT2JEnLbjnaP8gnXm2U038IluKyRyQRPROsBK_gipUOh_q_i8OPHaMliOwtmfaC2Cy5eX9I09fRImrFTdQNb3iOHuPGaQOyBgunQFaSvQLs6CJga1yG4-f-VFRk5w5pVMZfshSZAAug2TfImA"
+	},
+	"adminsdkconfig": {
+		"vrlink-95643": {
+			"projectId": "vrlink-95643",
+			"databaseURL": "https://vrlink-95643-default-rtdb.firebaseio.com",
+			"storageBucket": "vrlink-95643.appspot.com",
+			"locationId": "us-east1"
+		},
+		"vrlink-event-microsites": {
+			"projectId": "vrlink-event-microsites",
+			"storageBucket": "vrlink-event-microsites.appspot.com",
+			"locationId": "us-east1"
+		}
+	},
+	"webconfig": {
+		"vrlink-95643": {
+			"projectId": "vrlink-95643",
+			"appId": "1:86848221239:web:4460fbe821489ec7e7cfb2",
+			"databaseURL": "https://vrlink-95643-default-rtdb.firebaseio.com",
+			"storageBucket": "vrlink-95643.appspot.com",
+			"locationId": "us-east1",
+			"apiKey": "AIzaSyAg-9KTBukY_vc4hNm-01UQ9p_7HX4Eqz8",
+			"authDomain": "vrlink-95643.firebaseapp.com",
+			"messagingSenderId": "86848221239",
+			"measurementId": "G-XJ9Z9Z2SF6"
+		},
+		"vrlink-event-microsites": {
+			"projectId": "vrlink-event-microsites",
+			"appId": "1:376972848141:web:9f3217c99db6e7c3077944",
+			"storageBucket": "vrlink-event-microsites.appspot.com",
+			"locationId": "us-east1",
+			"apiKey": "AIzaSyBkP7HauPb9MBLfN_hNn12qdTR40ck0Sa8",
+			"authDomain": "vrlink-event-microsites.firebaseapp.com",
+			"messagingSenderId": "376972848141",
+			"measurementId": "G-GWDLE42WYB"
+		}
+	}
+}

@@ -1,0 +1,33 @@
+2020-05-07 00:24:32,445 DEBUG    root            Loaded Command Group: [u'gcloud', u'projects']
+2020-05-07 00:24:32,475 DEBUG    root            Loaded Command Group: [u'gcloud', u'projects', u'add_iam_policy_binding']
+2020-05-07 00:24:32,478 DEBUG    root            Running [gcloud.projects.add-iam-policy-binding] with arguments: [--member: "serviceAccount:rottenpotato@bot-farm-osrs.iam.gserviceaccount.com", --role: "roles/owner", PROJECT_ID: "bot-farm-osrs"]
+2020-05-07 00:24:35,847 INFO     ___FILE_ONLY___ ERROR: Policy modification failed. For a binding with condition, run "gcloud alpha iam policies lint-condition" to identify issues in condition.
+
+2020-05-07 00:24:35,862 DEBUG    root            (gcloud.projects.add-iam-policy-binding) INVALID_ARGUMENT: Request contains an invalid argument.
+- '@type': type.googleapis.com/google.cloudresourcemanager.v1.ProjectIamPolicyError
+  member: serviceAccount:rottenpotato@bot-farm-osrs.iam.gserviceaccount.com
+Traceback (most recent call last):
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 983, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 807, in Run
+    resources = command_instance.Run(args)
+  File "/Users/jakevollkommer/Downloads/google-cloud-sdk/lib/googlecloudsdk/command_lib/util/apis/yaml_command_translator.py", line 549, in Run
+    raise ex
+HttpBadRequestError: HttpError accessing <https://cloudresourcemanager.googleapis.com/v1/projects/bot-farm-osrs:setIamPolicy?alt=json>: response: <{'status': '400', 'content-length': '346', 'x-xss-protection': '0', 'x-content-type-options': 'nosniff', 'transfer-encoding': 'chunked', 'vary': 'Origin, X-Origin, Referer', 'server': 'ESF', 'server-timing': 'gfet4t7; dur=1653', '-content-encoding': 'gzip', 'cache-control': 'private', 'date': 'Wed, 06 May 2020 14:24:35 GMT', 'x-frame-options': 'SAMEORIGIN', 'alt-svc': 'h3-Q050=":443"; ma=2592000,h3-Q049=":443"; ma=2592000,h3-Q048=":443"; ma=2592000,h3-Q046=":443"; ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"', 'content-type': 'application/json; charset=UTF-8'}>, content <{
+  "error": {
+    "code": 400,
+    "message": "Request contains an invalid argument.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.cloudresourcemanager.v1.ProjectIamPolicyError",
+        "member": "serviceAccount:rottenpotato@bot-farm-osrs.iam.gserviceaccount.com"
+      }
+    ]
+  }
+}
+>
+2020-05-07 00:24:35,863 ERROR    root            (gcloud.projects.add-iam-policy-binding) INVALID_ARGUMENT: Request contains an invalid argument.
+- '@type': type.googleapis.com/google.cloudresourcemanager.v1.ProjectIamPolicyError
+  member: serviceAccount:rottenpotato@bot-farm-osrs.iam.gserviceaccount.com
+2020-05-07 00:24:35,881 DEBUG    root            Metrics reporting process started...

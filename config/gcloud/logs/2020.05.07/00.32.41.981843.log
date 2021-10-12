@@ -1,0 +1,9 @@
+2020-05-07 00:32:41,985 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam']
+2020-05-07 00:32:41,987 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service_accounts']
+2020-05-07 00:32:41,989 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service-accounts', u'keys']
+2020-05-07 00:32:41,992 DEBUG    root            Loaded Command Group: [u'gcloud', u'iam', u'service-accounts', u'keys', u'create']
+2020-05-07 00:32:41,996 DEBUG    root            Running [gcloud.iam.service-accounts.keys.create] with arguments: [--iam-account: "osrs-bot-farm@bot-farm-osrs.iam.gserviceaccount.com", OUTPUT-FILE: "/Users/jakevollkommer/google/authkey.json"]
+2020-05-07 00:32:43,994 INFO     ___FILE_ONLY___ created key [d3ab116a53e60b4c56d794492b5078256dcad81e] of type [json] as [/Users/jakevollkommer/google/authkey.json] for [osrs-bot-farm@bot-farm-osrs.iam.gserviceaccount.com]
+
+2020-05-07 00:32:43,998 INFO     root            Display format: "default"
+2020-05-07 00:32:44,015 DEBUG    root            Metrics reporting process started...
