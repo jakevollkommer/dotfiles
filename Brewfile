@@ -89,6 +89,7 @@ brew "git"
 # cask "chromedriver"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+cask "raycast"
 # # Create, manage and debug system- and user services
 # cask "launchcontrol"
 # # File system integration
