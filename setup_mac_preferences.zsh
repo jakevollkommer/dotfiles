@@ -5,6 +5,12 @@ echo "\n<<< Starting Mac Preferences Setup >>>\n"
 echo "Always show hidden files in Finder ..."
 defaults write com.apple.finder AppleShowAllFiles -boolean true
 
+echo "Always arrange files in Finder by name ..."
+defaults write com.apple.Finder FXPreferredGroupBy name
+
+echo "Never group files in Finder ..."
+defaults write com.apple.finder FXPreferredGroupBy none
+
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `glyv`
 echo "Using list view in all Finder windows by default ..."
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
