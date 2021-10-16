@@ -2,10 +2,55 @@ set shell=/bin/zsh
 
 " Use % to match pairs
 runtime macros/matchit.vim
-" Use vim over vi
-set nocompatible
 " Use filetype detection for plugins and indents
 filetype plugin indent on
+
+" Open new split panes to right and bottom, which feels more natural
+set splitbelow
+set splitright
+
+set nocompatible  " Use Vim over vi"
+set cursorline    " Highlight cursor"
+set backspace=2   " Backspace deletes like most programs in insert mode
+set nobackup      " Immediately delete backup file on successful write
+set nowritebackup
+set history=500   " Search patterns and command line entries
+set ruler         " show the cursor position all the time
+set showcmd       " display incomplete commands
+set incsearch     " do incremental searching as you're typing
+set hlsearch      " highlight matches
+set laststatus=2  " Always display the status line
+set autowrite     " Automatically :write before running commands
+set ignorecase    " Case insensitive searching"
+set smartcase     " Overrides ignorecase if searching for capitals"
+set tabstop=4     " Softtabs, 4 spaces
+set shiftwidth=4  " Use spaces instead of tabs
+set expandtab
+set scrolloff=10  " Do not let cursor scroll below or above N number of lines when scrolling.
+set lazyredraw    " For smoother and faster macros
+set number        " Line Numbers
+set numberwidth=5
+set noantialias
+set undodir=~/.vim/undo-dir
+set undofile
+set undolevels=1000
+set undoreload=10000
+
+set foldenable    " Foldable code blocks
+" Fold based on indentation
+set foldmethod=indent
+" Only heavily nested blocks are folded by default
+set foldlevelstart=10
+
+" Enable auto completion menu after pressing TAB.
+set wildmenu
+" Make wildmenu behave like similar to Bash completion.
+set wildmode=list:longest
+" There are certain files that we would never want to edit with Vim.
+" Wildmenu will ignore files with these extensions.
+set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
+
+" PLUGINS ---------------------------------------------------------------- {{{
 
 " Use vimplugged as the plugin package manager
 call plug#begin('~/.vim/plugged')
@@ -31,19 +76,26 @@ Plug 'prettier/vim-prettier', {
 
 call plug#end()
 
+" }}}
+
+" MAPPINGS --------------------------------------------------------------- {{{
+
+" Leader Mappings
+" Use Space as the leader
+map <Space> <leader>
+" Add a semicolon to the current line without moving the cursor
+nnoremap <Leader>; m'A;<ESC>`'
+" Source vimrc with <Leader>vc
+nnoremap <Leader>vc :source ~/.vimrc<CR>:echo "Reloaded .vimrc"<CR>
+map <Leader>w :update<CR>
+map <Leader>q :q<CR>
+" Stop highlighting
+nnoremap <leader><space> :nohlsearch<CR>
+" Execute the current file with Python.
+nnoremap <Leader>p :w <CR>:!clear <CR>:!python % <CR>
+
 " Toggle NERDTree with Ctrl + n
 map <C-n> :NERDTreeToggle<CR>
-
-" TODO learn some snippets https://github.com/SirVer/ultisnips
-
-" TODO use kite
-set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
-set laststatus=2  " always display the status line
-let g:kite_tab_complete=1
-
-" Line Numbers
-set number
-set numberwidth=5
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
@@ -57,47 +109,60 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-" Open new split panes to right and bottom, which feels more natural
-set splitbelow
-set splitright
+" Resize split windows using arrow keys by pressing:
+" CTRL+UP, CTRL+DOWN, CTRL+LEFT, or CTRL+RIGHT.
+noremap <c-up> <c-w>+
+noremap <c-down> <c-w>-
+noremap <c-left> <c-w>>
+noremap <c-right> <c-w><
 
-set backspace=2   " Backspace deletes like most programs in insert mode
-set nobackup      " Immediately delete backup file on successful write
-set nowritebackup
-set history=500   " Search patterns and command line entries
-set ruler         " show the cursor position all the time
-set showcmd       " display incomplete commands
-set incsearch     " do incremental searching as you're typing
-set hlsearch      " highlight matches
-set laststatus=2  " Always display the status line
-set autowrite     " Automatically :write before running commands
-set smartcase
-set ignorecase
-set noantialias
+" Open/close folds with semicolon
+nnoremap ; za
 
-" highlight vertical column of cursor
-" TODO does this work? Do I want this?
-au WinLeave * set nocursorline nocursorcolumn
-au WinEnter * set cursorline
-set cursorline
+" Move up/down visually without having to go left/right
+nnoremap j gj
+nnoremap k gk
 
-" Switch syntax highlighting on, when the terminal has colors
-" Also switch on highlighting the last used search pattern.
-if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
-  syntax on
-endif
+" TODO how can git help me here? says not found
+" map <Leader>gs :Gstatus<CR>
+" map <Leader>gc :Gcommit<CR>
+" map <Leader>gp :Gpush<CR>
 
-" Softtabs, 4 spaces
-set tabstop=4
-set shiftwidth=4
-set expandtab
-" When you’re navigating through <TAB> space, the cursor will jump from one end to another. If you want to turn the <TAB> space into normal spaces, use the following one.
-" set expandtab
-" TODO what does this change?
-" set softtabstop=4
+" Start inserting at the corect indentation on an empty line
+nnoremap <tab> ddO
 
-" Some filetypes should use 2 spaces for tabs
-autocmd BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.json,Podfile setlocal tabstop=2 shiftwidth=2 softtabstop=2
+" Center the cursor vertically when moving to the next word during a search.
+nnoremap n nzz
+nnoremap N Nzz
+
+" Yank from cursor to the end of line.
+nnoremap Y y$
+
+" fix typos for saving/quitting
+nmap :W :w
+nmap :Q :q
+nmap :wQ :wq
+nmap :Wq :wq
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+" bind K to search word under cursor
+" TODO why doesn't this work?
+nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
+
+" }}}
+
+" VIMSCRIPT -------------------------------------------------------------- {{{
+
+" Automatically turn paste mode on/off when pasting
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+function! XTermPasteBegin()
+  set pastetoggle=<Esc>[201~
+  set paste
+  return ""
+endfunction
 
 " Tab completion
 " will insert tab at beginning of line,
@@ -114,44 +179,24 @@ function! InsertTabWrapper()
 endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
-" For smoother and faster macros
-set lazyredraw
+" Some filetypes should use 2 spaces for tabs
+autocmd BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.json,Podfile setlocal tabstop=2 shiftwidth=2 softtabstop=2
 
-" Stop highlighting
-nnoremap <leader><space> :nohlsearch<CR>
+" Have nerdtree ignore certain files and directories.
+let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
 
-" Foldable code blocks
-set foldenable
-" Only heavily nested blocks are folded by default
-set foldlevelstart=10
-" Fold based on indentation
-set foldmethod=indent
-" Open/close folds with semicolon
-nnoremap ; za
+" TODO learn some snippets https://github.com/SirVer/ultisnips
 
-" Move up/down visually without having to go left/right
-nnoremap j gj
-nnoremap k gk
+" TODO use kite
+set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
+set laststatus=2  " always display the status line
+let g:kite_tab_complete=1
 
-" Leader Mappings
-" Use Space as the leader
-map <Space> <leader>
-" Add a semicolon to the current line without moving the cursor
-nnoremap <Leader>; m'A;<ESC>`'
-" Source vimrc with <Leader>vc
-nnoremap <Leader>vc :source ~/.vimrc<CR>:echo "Reloaded .vimrc"<CR>
-map <Leader>w :update<CR>
-map <Leader>q :q<CR>
-" TODO how can git help me here? says not found
-" map <Leader>gs :Gstatus<CR>
-" map <Leader>gc :Gcommit<CR>
-" map <Leader>gp :Gpush<CR>
-
-" fix typos for saving/quitting
-nmap :W :w
-nmap :Q :q
-nmap :wQ :wq
-nmap :Wq :wq
+" Switch syntax highlighting on, when the terminal has colors
+" Also switch on highlighting the last used search pattern.
+if (&t_Co > 2 || has("gui_running")) && !exists("syntax_on")
+  syntax on
+endif
 
 " have jsx highlighting/indenting work in .js files as well
 let g:jsx_ext_required = 0
@@ -161,18 +206,6 @@ let g:jsx_ext_required = 0
 
 " Session plug-in will ask whether you want to restore your default session.
 let g:session_autoload = 'no'
-
-" Automatically turn paste mode on/off when pasting
-let &t_SI .= "\<Esc>[?2004h"
-let &t_EI .= "\<Esc>[?2004l"
-
-inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-function! XTermPasteBegin()
-  set pastetoggle=<Esc>[201~
-  set paste
-  return ""
-endfunction
 
 " The Silver Searcher
 if executable('ag')
@@ -186,10 +219,6 @@ if executable('ag')
   let g:ctrlp_use_caching = 0
 endif
 
-" bind K to search word under cursor
-" TODO why doesn't this work?
-nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
-
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
@@ -200,10 +229,6 @@ endif
 if !isdirectory($HOME."/.vim/undo-dir")
     call mkdir($HOME."/.vim/undo-dir", "", 0700)
 endif
-set undodir=~/.vim/undo-dir
-set undofile
-set undolevels=1000
-set undoreload=10000
 
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
@@ -217,6 +242,16 @@ function! <SID>StripTrailingWhitespaces()
 endfun
 autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
+" You can split a window into sections by typing `:split` or `:vsplit`.
+" Display cursorline and cursorcolumn ONLY in active window.
+augroup cursor_off
+    autocmd!
+    autocmd WinLeave * set nocursorline
+    autocmd WinEnter * set cursorline
+augroup END
+
 " TODO find better one that doesn't annoy me
 " Add this to plugins too https://github.com/alvan/vim-closetag
 let g:closetag_filenames = "*.js,*.html,*.xhtml,*.phtml"
+
+" }}}
