@@ -22,6 +22,9 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 # Apparently zsh PS1 is different from bash PS1?
 #'[\[$(tput sgr0)\]\[\033[38;5;12m\]\t\[$(tput sgr0)\]] \[$(tput sgr0)\]\[\033[38;5;10m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[38;5;10m\]\h\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\\$ \[$(tput sgr0)\]'
 
+# Default pyenv for python
+eval "$(pyenv init --path)"
+
 # Add Locations to $path Array
 typeset -U path
 
@@ -29,9 +32,6 @@ path=(
     "$N_PREFIX/bin"
     $path
     )
-
-# Default pyenv for python
-eval "$(pyenv init -)"
 
 # Create Aliases
 alias ls="exa"

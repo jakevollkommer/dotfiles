@@ -12,6 +12,8 @@
     ~/.zshenv:
     ~/.gitconfig:
       create: true
+    ~/.gitignore:
+      create: true
     ~/.config:
       create: true
       path: config
