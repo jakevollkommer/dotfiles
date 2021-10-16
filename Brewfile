@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "thii/unxip"
 # Java build tool
@@ -106,6 +107,7 @@ cask "anaconda"
 cask "android-platform-tools"
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"
+cask "font-fira-code"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Create, manage and debug system- and user services
