@@ -6,10 +6,12 @@
 
 - link:
     ~/.vim:
+      create: true
     ~/.vimrc:
     ~/.zshrc:
     ~/.zshenv:
     ~/.gitconfig:
+      create: true
     ~/.config:
       create: true
       path: config
@@ -24,6 +26,9 @@
   - command: ./setup_mac_preferences.zsh
     stdout: true
     stderr: true
+  - command: xcode-select --install
+    stdout: true
+    stderr: true
   - command: ./setup_homebrew.zsh
     stdout: true
     stderr: true
@@ -31,6 +36,9 @@
     stdout: true
     stderr: true
   - command: ./setup_iterm.zsh
+    stdout: true
+    stderr: true
+  - command: ./setup_python.zsh
     stdout: true
     stderr: true
   - command: ./setup_node.zsh

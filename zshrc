@@ -30,6 +30,9 @@ path=(
     $path
     )
 
+# Default pyenv for python
+eval "$(pyenv init -)"
+
 # Create Aliases
 alias ls="exa"
 alias l="exa -lGF"
