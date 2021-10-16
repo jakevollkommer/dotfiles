@@ -10,9 +10,10 @@ export PREFIX="$N_PREFIX"
 
 # Change ZSH Options
 
+autoload -U promptinit && promptinit
 # Customize Prompts
 PROMPT='
-%~ %# '
+%{%F{red}%}%n%{%f%}@%{%F{blue}%}%m %{%F{yellow}%}%~ %{%f%}%# '
 
 RPROMPT='%*'
 export CLICOLOR=1
