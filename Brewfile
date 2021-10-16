@@ -1,5 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
+tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/core"
 tap "thii/unxip"
@@ -107,26 +108,41 @@ cask "anaconda"
 cask "android-platform-tools"
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"
+# Voice and text chat software
+cask "discord"
+# Disk usage utility
+cask "disk-inventory-x"
 cask "font-fira-code"
+# Utility to fix grammar errors and style issues in text
+cask "grammarly"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Create, manage and debug system- and user services
 cask "launchcontrol"
+# Software for Logitech devices
+cask "logitech-options"
+# Remote desktop client
+cask "microsoft-remote-desktop"
+# App to write, plan, collaborate, and get organized
+cask "notion"
 # File system integration
 cask "osxfuse"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Tool that provides consistent, highly configurable symbols for apps
+cask "sf-symbols"
+# Team communication and collaboration software
+cask "slack"
+# Music streaming service
+cask "spotify"
+# To-do & task list manager
+cask "ticktick"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
 mas "iMovie", id: 408981434
-mas "InjectionIII", id: 1380446739
 mas "Keymou", id: 449863619
 mas "Keynote", id: 409183694
-mas "Microsoft Remote Desktop", id: 1295203466
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
-mas "Slack", id: 803453959
 mas "Spark", id: 1176895641
-mas "The Unarchiver", id: 425424353
-mas "VideoCast", id: 876836699
 mas "Xcode", id: 497799835
