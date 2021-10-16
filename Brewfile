@@ -50,6 +50,8 @@ brew "libass"
 brew "xvid", link: false
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GNU debugger
 brew "gdb"
 # Distributed revision control system
@@ -90,6 +92,8 @@ brew "popt", link: false
 brew "python@3.8"
 # GNU's portable shell tool
 brew "shtool"
+# Code-search similar to ack
+brew "the_silver_searcher"
 # Internet file retriever
 brew "wget"
 # UNIX shell (command interpreter)

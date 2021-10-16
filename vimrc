@@ -208,8 +208,14 @@ set undoreload=10000
 " Treat <li> and <p> tags like the block tags they are
 let g:html_indent_tags = 'li\|p'
 
-# Remove trailing writespace on save
-autocmd BufWritePre * :%s/\s\+$//e
+" Remove trailing writespace on save
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd BufWritePre * :call <SID>StripTrailingWhitespaces()
 
 " TODO find better one that doesn't annoy me
 " Add this to plugins too https://github.com/alvan/vim-closetag
