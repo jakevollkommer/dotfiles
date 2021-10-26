@@ -95,7 +95,7 @@ nnoremap <leader><space> :nohlsearch<CR>
 nnoremap <Leader>p :w <CR>:!clear <CR>:!python % <CR>
 
 " Toggle NERDTree with Ctrl + n
-map <C-n> :NERDTreeToggle<CR>
+map <Leader>n :NERDTreeToggle<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
