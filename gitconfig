@@ -25,3 +25,5 @@
 [http]
     postBuffer = 100000000
     version = HTTP/2
+[pull]
+	rebase = preserve
