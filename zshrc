@@ -35,7 +35,7 @@ path=(
 
 # Create Aliases
 alias ls="exa"
-alias l="exa -lGF"
+alias l="exa -lah"
 alias ll="exa -lah --git"
 alias la="exa -lah --git"
 alias lt="exa -lah --git --tree --level=2"
