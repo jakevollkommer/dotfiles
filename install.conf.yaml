@@ -31,10 +31,10 @@
   - command: xcode-select --install
     stdout: true
     stderr: true
-  - command: ./setup_homebrew.zsh
+  - command: ./setup_zsh.zsh
     stdout: true
     stderr: true
-  - command: ./setup_zsh.zsh
+  - command: ./setup_homebrew.zsh
     stdout: true
     stderr: true
   - command: ./setup_iterm.zsh
