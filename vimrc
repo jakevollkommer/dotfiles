@@ -39,11 +39,9 @@ set undofile
 set undolevels=1000
 set undoreload=10000
 
-set foldenable    " Foldable code blocks
-" Fold based on indentation
-set foldmethod=indent
-" Only heavily nested blocks are folded by default
-set foldlevelstart=10
+set foldenable         " Fold by default
+set foldmethod=indent  " Fold based on indentation
+set foldlevelstart=10  " Only heavily nested blocks are folded by default
 
 " Enable auto completion menu after pressing TAB.
 set wildmenu
@@ -112,10 +110,13 @@ nnoremap <Leader>; m'A;<ESC>`'
 nnoremap <Leader>vc :source ~/.vimrc<CR>:echo "Reloaded .vimrc"<CR>
 map <Leader>w :update<CR>
 map <Leader>q :q<CR>
-" Stop highlighting
-nnoremap <leader><space> :nohlsearch<CR>
+" Toggle highlighting
+nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 " Execute the current file with Python.
 nnoremap <Leader>p :w <CR>:!clear <CR>:!python % <CR>
+
+" Get out of inset mode
+imap jk <Esc>
 
 " Toggle NERDTree with Ctrl + n
 map <Leader>n :NERDTreeToggle<CR>
