@@ -29,6 +29,7 @@ typeset -U path
 path=(
     "$N_PREFIX/bin"
     "$DOTFILES/bin"
+    "usr/local/bin"
     "~/flutter/bin"
     $path
     )

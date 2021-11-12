@@ -33,6 +33,7 @@ set relativenumber        " Hybrid line numbers
 set nu rnu
 set mouse=a               " Set all mouse modes
 set clipboard=unnamed     " Use the system clipboard
+set path+=**              " Search down into subfolders
 set numberwidth=5
 set noantialias
 set undodir=~/.vim/undo-dir
@@ -123,7 +124,7 @@ imap jk <Esc>
 vmap < <gv
 vmap > >gv
 
-" Toggle NERDTree with Ctrl + n
+" Toggle NERDTree with Leader + n
 map <Leader>n :NERDTreeToggle<CR>
 
 " Get off my lawn
@@ -186,6 +187,9 @@ nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 " }}}
 
 " VIMSCRIPT -------------------------------------------------------------- {{{
+
+" Create the `tags file`
+command! MakeTags !ctags -R .
 
 " Automatically turn paste mode on/off when pasting
 let &t_SI .= "\<Esc>[?2004h"
