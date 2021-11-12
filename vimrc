@@ -32,7 +32,7 @@ set number                " Line Numbers
 set relativenumber        " Hybrid line numbers
 set nu rnu
 set mouse=a               " Set all mouse modes
-set clipboard=unnamedplus " Use the system clipboard
+set clipboard=unnamed     " Use the system clipboard
 set numberwidth=5
 set noantialias
 set undodir=~/.vim/undo-dir
@@ -133,7 +133,7 @@ nnoremap <Up> :echoe "Use k"<CR>
 nnoremap <Down> :echoe "Use j"<CR>
 
 " Quicker window movement
-nnoremap <C-j> <Plug>WinMoveDown
+nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l

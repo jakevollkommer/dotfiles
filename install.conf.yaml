@@ -10,6 +10,8 @@
     ~/.vimrc:
     ~/.zshrc:
     ~/.zshenv:
+    ~/bin:
+      create: true
     ~/.tmux.conf:
       create: true
     ~/.gitconfig:
