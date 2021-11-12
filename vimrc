@@ -9,30 +9,30 @@ filetype plugin indent on
 set splitbelow
 set splitright
 
-set nocompatible      " Use Vim over vi
-set cursorline        " Highlight cursor
-set backspace=2       " Backspace deletes like most programs in insert mode
-set nobackup          " Immediately delete backup file on successful write
+set nocompatible          " Use Vim over vi
+set cursorline            " Highlight cursor
+set backspace=2           " Backspace deletes like most programs in insert mode
+set nobackup              " Immediately delete backup file on successful write
 set nowritebackup
-set history=500       " Search patterns and command line entries
-set ruler             " show the cursor position all the time
-set showcmd           " display incomplete commands
-set incsearch         " do incremental searching as you're typing
-set hlsearch          " highlight matches
-set laststatus=2      " Always display the status line
-set autowrite         " Automatically :write before running commands
-set ignorecase        " Case insensitive searching
-set smartcase         " Overrides ignorecase if searching for capitals
-set tabstop=4         " Softtabs, 4 spaces
-set shiftwidth=4      " Use spaces instead of tabs
+set history=500           " Search patterns and command line entries
+set ruler                 " show the cursor position all the time
+set showcmd               " display incomplete commands
+set incsearch             " do incremental searching as you're typing
+set hlsearch              " highlight matches
+set laststatus=2          " Always display the status line
+set autowrite             " Automatically :write before running commands
+set ignorecase            " Case insensitive searching
+set smartcase             " Overrides ignorecase if searching for capitals
+set tabstop=4             " Softtabs, 4 spaces
+set shiftwidth=4          " Use spaces instead of tabs
 set expandtab
-set scrolloff=10      " Do not let cursor scroll below or above N number of lines when scrolling.
-set lazyredraw        " For smoother and faster macros
-set number            " Line Numbers
-set relativenumber    " Hybrid line numbers
+set scrolloff=10          " Do not let cursor scroll below or above N number of lines when scrolling.
+set lazyredraw            " For smoother and faster macros
+set number                " Line Numbers
+set relativenumber        " Hybrid line numbers
 set nu rnu
-set mouse=a           " Set all mouse modes
-set clipboard=unnamed " Use the system clipboard
+set mouse=a               " Set all mouse modes
+set clipboard=unnamedplus " Use the system clipboard
 set numberwidth=5
 set noantialias
 set undodir=~/.vim/undo-dir
