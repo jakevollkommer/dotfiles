@@ -115,8 +115,12 @@ nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 " Execute the current file with Python.
 nnoremap <Leader>p :w <CR>:!clear <CR>:!python % <CR>
 
-" Get out of inset mode
+" Get out of insert mode
 imap jk <Esc>
+
+" Keep on indenting
+vmap < <gv
+vmap > >gv
 
 " Toggle NERDTree with Ctrl + n
 map <Leader>n :NERDTreeToggle<CR>
