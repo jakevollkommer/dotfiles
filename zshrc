@@ -53,6 +53,19 @@ alias gorack="ftp jvollkommer:Vrl-2021@198.205.118.90"
 alias seedbox="ftp seedbox:sbsehct1B!@rain.seedhost.eu"
 alias bbd="brew bundle dump --describe --force"
 alias trail="<<<'${(F)path}'"
+alias vimrc="vim ~/.vimrc"
+
+# Filesystem aliases
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
+
+# tmux aliases
+alias ta='tmux attach'
+alias tls='tmux ls'
+alias tat='tmux attach -t'
+alias tns='tmux new-session -s'
 
 # Write Functions
 function mkcd() {

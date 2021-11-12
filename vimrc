@@ -50,6 +50,19 @@ set wildmode=list:longest
 " Wildmenu will ignore files with these extensions.
 set wildignore=*.docx,*.jpg,*.png,*.gif,*.pdf,*.pyc,*.exe,*.flv,*.img,*.xlsx
 
+" Hybrid line numbers
+:set number relativenumber
+:set nu rnu
+
+" Automatically toggle absolute and relative line numbers
+:set number
+
+:augroup numbertoggle
+:  autocmd!
+:  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+:  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+:augroup END
+
 " PLUGINS ---------------------------------------------------------------- {{{
 
 " Install vim-plug if not found
@@ -80,6 +93,7 @@ Plug 'tpope/vim-commentary'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'chrisbra/csv.vim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 " TODO prettier should run on save
 Plug 'prettier/vim-prettier', {
