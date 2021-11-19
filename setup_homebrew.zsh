@@ -22,3 +22,7 @@ fi
 
 # Install taps/casks
 brew bundle --verbose
+
+# Set Brave as the default browser
+echo "Setting Brave as the default browser, please confirm.
+open -a "Brave Browser" --args --make-default-browser
