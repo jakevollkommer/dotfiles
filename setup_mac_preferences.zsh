@@ -75,6 +75,12 @@ defaults write com.apple.finder EmptyTrashSecurely -bool true
 echo "Minimize windows into their application’s icon ..."
 defaults write com.apple.dock minimize-to-application -bool true
 
+echo "Moving dock to the left ..."
+defaults write com.apple.dock orientation left
+
+echo "Using a smaller dock size ..."
+defaults write com.apple.dock tilesize -integer 36
+
 echo "Enable spring loading for all Dock items ..."
 defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
@@ -85,7 +91,7 @@ echo "Group windows by application in Mission Control ..."
 defaults write com.apple.dock "expose-group-by-app" -bool true
 
 echo "Remove the auto-hiding Dock delay ..."
-defaults write com.apple.Dock autohide-delay -float 0
+defaults write com.apple.Dock autohide-delay -float 0.0001;
 
 echo "Remove Notification Center from Menubar ..."
 launchctl remove com.apple.notificationcenterui.agent
