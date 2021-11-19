@@ -19,3 +19,6 @@ else
     echo "Enter superuser (sudo) password to change login shell"
     chsh -s "/bin/zsh"
 fi
+
+echo "Using gloabl gitignore file"
+git config --global core.excludesfile ./gitignore
