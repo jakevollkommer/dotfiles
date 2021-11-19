@@ -55,6 +55,8 @@ alias seedbox="ftp seedbox:sbsehct1B!@rain.seedhost.eu"
 alias bbd="brew bundle dump --describe --force"
 alias trail="<<<'${(F)path}'"
 alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
+alias seedbox="ftp seedbox@rain.seedhost.eu"
 
 # Filesystem aliases
 alias ..='cd ..'
