@@ -12,10 +12,10 @@ else
     echo "/usr/local/bin/zsh" | sudo tee -a "/etc/shells" >/dev/null
 fi
 
-if ["$SHELL" = "usr/local/bin/zsh"]; then
-    echo "$SHELL is already /usr/local/bin/zsh"
+if $SHELL = "/bin/zsh"; then
+    echo "$SHELL is already /bin/zsh"
 else
     # Change the login shell
     echo "Enter superuser (sudo) password to change login shell"
-    chsh -s "/usr/local/bin/zsh"
+    chsh -s "/bin/zsh"
 fi
