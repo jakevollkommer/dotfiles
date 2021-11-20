@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/Users/jakevollkommer/.dotfiles/config/bat'
+let g:netrw_dirhist_6='/Users/jakevollkommer/.dotfiles/config/configstore'
+let g:netrw_dirhist_5='/Users/jakevollkommer/.dotfiles/config/calico'
+let g:netrw_dirhist_4='/Users/jakevollkommer/VRLink/files'
+let g:netrw_dirhist_3='/Users/jakevollkommer/.ssh'
+let g:netrw_dirhist_2='/Users/jakevollkommer/VRLink/VRLink/Web/functions/auth'
+let g:netrw_dirhist_1='/Users/jakevollkommer/VRLink/VRLink/Web/functions/firestore'
+let g:netrw_dirhist_0='/Users/jakevollkommer/VRLink/Microsites/.git'
+let g:netrw_dirhist_9='/Users/jakevollkommer/VRLink/Microsites/Web/vrlink-microsites/src/context'
+let g:netrw_dirhist_8='/Users/jakevollkommer/VRLink/Microsites/Web/vrlink-microsites/.firebase'
