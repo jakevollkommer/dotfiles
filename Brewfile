@@ -16,8 +16,12 @@ brew "bat"
 brew "berkeley-db"
 # Perl compatible regular expressions library
 brew "pcre"
+# Library for command-line editing
+brew "readline"
 # Command-line interface for SQLite
 brew "sqlite"
+# General-purpose data compression with high compression ratio
+brew "xz"
 # Core application library for C
 brew "glib"
 # Manage compile and link flags for libraries
@@ -28,6 +32,8 @@ brew "clingo"
 brew "cloc"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Reimplementation of ctags(1)
+brew "ctags"
 # Filesystem for accessing FTP hosts based on FUSE and libcurl
 brew "curlftpfs"
 # Create Docker hosts locally and on cloud providers
@@ -38,6 +44,8 @@ brew "exa"
 brew "libtool"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
+# Library to load and enumerate PKCS#11 modules
+brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # Generate introspection data for GObject libraries
@@ -60,10 +68,14 @@ brew "gdb"
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
+# HTTP/2 C Library
+brew "nghttp2"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
 # Next generation open source RPC library and framework
 brew "grpc", link: false
+# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
+brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # GNU utilities for networking
@@ -78,6 +90,8 @@ brew "maven"
 brew "media-info"
 # Command-line client for Mega.co.nz
 brew "megatools"
+# Cross-platform application and UI framework
+brew "qt"
 # Matroska media files manipulation tools
 brew "mkvtoolnix"
 # Open source relational database management system
@@ -86,24 +100,30 @@ brew "mysql"
 brew "n"
 # Platform built on V8 to build network applications
 brew "node"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
 # PDF rendering library (based on the xpdf-3.0 code base)
 brew "poppler"
 # Library like getopt(3) with a number of enhancements
 brew "popt", link: false
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
+# Python version management
+brew "pyenv"
 # GNU's portable shell tool
 brew "shtool"
 # Code-search similar to ack
 brew "the_silver_searcher"
+# Terminal multiplexer
+brew "tmux"
 # Internet file retriever
 brew "wget"
+# Download YouTube videos from the command-line
+brew "youtube-dl", link: false
+# General-purpose lossless data-compression library
+brew "zlib"
 # UNIX shell (command interpreter)
 brew "zsh"
 # A Swift command line tool to extract signed archives
 brew "thii/unxip/unxip"
-# Distribution of the Python and R programming languages for scientific computing
-cask "anaconda"
 # Android SDK component
 cask "android-platform-tools"
 # Automated testing of webapps for Google Chrome
@@ -144,5 +164,6 @@ mas "Keymou", id: 449863619
 mas "Keynote", id: 409183694
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
+mas "Snappy", id: 512617038
 mas "Spark", id: 1176895641
 mas "Xcode", id: 497799835
