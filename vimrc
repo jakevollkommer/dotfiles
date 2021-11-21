@@ -35,7 +35,9 @@ set mouse=a               " Set all mouse modes
 set clipboard=unnamed     " Use the system clipboard
 set path+=**              " Search down into subfolders
 set numberwidth=5
-set noantialias
+if !has('nvim')
+    set noantialias
+endif
 set undodir=~/.vim/undo-dir
 set undofile
 set undolevels=1000
@@ -87,10 +89,12 @@ Plug 'mg979/vim-visual-multi', {'branch': 'master'}
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'chrisbra/csv.vim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " post install (yarn install | npm install) then load plugin only for editing supported files
 " TODO prettier should run on save
 Plug 'prettier/vim-prettier', {
