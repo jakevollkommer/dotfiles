@@ -35,6 +35,8 @@ path=(
     )
 
 # Create Aliases
+# Prefer nvim over vim
+alias vim="nvim"
 alias ls="exa"
 alias l="exa -lah"
 alias ll="exa -lah --git"
@@ -54,8 +56,9 @@ alias gorack="ftp jvollkommer:Vrl-2021@198.205.118.90"
 alias seedbox="ftp seedbox:sbsehct1B!@rain.seedhost.eu"
 alias bbd="brew bundle dump --describe --force"
 alias trail="<<<'${(F)path}'"
-alias vimrc="vim ~/.vimrc"
-alias zshrc="vim ~/.zshrc"
+alias vimrc="nvim ~/.vimrc"
+" nnoremap <tab> ddO
+alias zshrc="nvim ~/.zshrc"
 alias seedbox="ftp seedbox@rain.seedhost.eu"
 
 # Filesystem aliases
