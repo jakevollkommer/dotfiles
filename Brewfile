@@ -16,12 +16,8 @@ brew "bat"
 brew "berkeley-db"
 # Perl compatible regular expressions library
 brew "pcre"
-# Library for command-line editing
-brew "readline"
 # Command-line interface for SQLite
 brew "sqlite"
-# General-purpose data compression with high compression ratio
-brew "xz"
 # Core application library for C
 brew "glib"
 # Manage compile and link flags for libraries
@@ -34,8 +30,8 @@ brew "cloc"
 brew "coreutils"
 # Reimplementation of ctags(1)
 brew "ctags"
-# Filesystem for accessing FTP hosts based on FUSE and libcurl
-brew "curlftpfs"
+# Pack, ship and run any application as a lightweight container
+brew "docker"
 # Create Docker hosts locally and on cloud providers
 brew "docker-machine"
 # Modern replacement for 'ls'
@@ -44,8 +40,6 @@ brew "exa"
 brew "libtool"
 # GNU Ubiquitous Intelligent Language for Extensions
 brew "guile"
-# Library to load and enumerate PKCS#11 modules
-brew "p11-kit"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
 # Generate introspection data for GObject libraries
@@ -62,20 +56,14 @@ brew "xvid", link: false
 brew "ffmpeg"
 # Command-line fuzzy finder written in Go
 brew "fzf"
-# GNU debugger
-brew "gdb"
 # Distributed revision control system
 brew "git"
 # Git extension for versioning large files
 brew "git-lfs"
-# HTTP/2 C Library
-brew "nghttp2"
 # Open-source build automation tool based on the Groovy and Kotlin DSL
 brew "gradle"
 # Next generation open source RPC library and framework
 brew "grpc", link: false
-# ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
-brew "libheif"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # GNU utilities for networking
@@ -90,14 +78,14 @@ brew "maven"
 brew "media-info"
 # Command-line client for Mega.co.nz
 brew "megatools"
-# Cross-platform application and UI framework
-brew "qt"
 # Matroska media files manipulation tools
 brew "mkvtoolnix"
 # Open source relational database management system
 brew "mysql"
 # Node version management
 brew "n"
+# HTTP/2 C Library
+brew "nghttp2"
 # Platform built on V8 to build network applications
 brew "node"
 # Cryptography and SSL/TLS Toolkit
@@ -108,12 +96,16 @@ brew "poppler"
 brew "popt", link: false
 # Python version management
 brew "pyenv"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.8"
 # GNU's portable shell tool
 brew "shtool"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
+# CLI tool that moves files or folder to the trash
+brew "trash"
 # Internet file retriever
 brew "wget"
 # Download YouTube videos from the command-line
@@ -126,6 +118,8 @@ brew "zsh"
 brew "thii/unxip/unxip"
 # Android SDK component
 cask "android-platform-tools"
+# Web browser focusing on privacy
+cask "brave-browser"
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"
 # Voice and text chat software
@@ -133,6 +127,8 @@ cask "discord"
 # Disk usage utility
 cask "disk-inventory-x"
 cask "font-fira-code"
+# Web browser
+cask "google-chrome"
 # Utility to fix grammar errors and style issues in text
 cask "grammarly"
 # Terminal emulator as alternative to Apple's Terminal app
@@ -145,8 +141,6 @@ cask "logitech-options"
 cask "microsoft-remote-desktop"
 # App to write, plan, collaborate, and get organized
 cask "notion"
-# File system integration
-cask "osxfuse"
 # Control your tools with a few keystrokes
 cask "raycast"
 # Tool that provides consistent, highly configurable symbols for apps
@@ -159,6 +153,7 @@ cask "spotify"
 cask "ticktick"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
+mas "GarageBand", id: 682658836
 mas "iMovie", id: 408981434
 mas "Keymou", id: 449863619
 mas "Keynote", id: 409183694
