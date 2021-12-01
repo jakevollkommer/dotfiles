@@ -95,12 +95,13 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sindrets/winshift.nvim'
 " post install (yarn install | npm install) then load plugin only for editing supported files
-" TODO prettier should run on save
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
+" TODO prettier should run on save
 call plug#end()
 
 " }}}
@@ -150,8 +151,13 @@ noremap <c-down> <c-w>-
 noremap <c-left> <c-w>>
 noremap <c-right> <c-w><
 
-" Open/close folds with semicolon
-nnoremap ; za
+" Open/close folds with single quote
+nnoremap ' za
+
+" Grep the word underneath the cursor
+nnoremap gr :grep <cword> *<CR>
+" Grep the word underneath the cursor, searching only current file's directory
+nnoremap Gr :grep <cword> %:p:h/*<CR>
 
 " Move up/down visually without having to go left/right
 nnoremap j gj
