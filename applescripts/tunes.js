@@ -1,4 +1,4 @@
-const symbol = "";
+const symbol = "🎵";
 let output = "";
 if (Application("Spotify").running()) {
     const track = Application("Spotify").currentTrack;
