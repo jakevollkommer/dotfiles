@@ -1,0 +1,20 @@
+#!/bin/bash
+catalog_name=$(eval "echo $1" | sed 's/\.pdf//')
+echo "Creating directory..."
+mkdir "$catalog_name"
+mv "$1" "$catalog_name"
+cd "$catalog_name"
+echo "Converting to PNG..."
+pdftoppm "$1" -scale-to-x 2048 -scale-to-y 1536 page -png 1>/dev/null 2>&1
+
+echo "Rename pages..."
+FILES="page-0*"
+for f in $FILES
+do
+  removed_zero=$(eval "echo $f | perl -ne 's/(?<=-|0)0(?=[0-9])//g; print;'")
+  mv $f $removed_zero
+done
+
+echo "Uploading to GoRack..."
+cd ../
+ncftpput -avR gorack inetpub/wwwroot/ipadapp/Antonio "$catalog_name"
