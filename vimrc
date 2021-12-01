@@ -121,6 +121,8 @@ map <Leader>q :q<CR>
 nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 " Execute the current file with Python.
 nnoremap <Leader>p :w <CR>:!clear <CR>:!python % <CR>
+" Source the currnt file
+nnoremap <Leader>s :w<CR>:so %<CR>
 
 " Get out of insert mode
 imap jk <Esc>
