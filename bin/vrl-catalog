@@ -1,5 +1,7 @@
 #!/bin/bash
 catalog_name=$(eval "echo $1" | sed 's/\.pdf//')
+metatagger=inetpub/wwwroot/ipadapp/Antonio
+
 echo "Creating directory..."
 mkdir "$catalog_name"
 mv "$1" "$catalog_name"
@@ -17,4 +19,5 @@ done
 
 echo "Uploading to GoRack..."
 cd ../
-ncftpput -avR gorack inetpub/wwwroot/ipadapp/Antonio "$catalog_name"
+find "$catalog_name" -type f -exec curl --netrc --ftp-create-dirs -T {} "ftp://198.205.118.90/"$metatagger"/{}" \;
+
