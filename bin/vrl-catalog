@@ -1,5 +1,22 @@
 #!/bin/bash
+
+display_usage() {
+  echo -e "\nUsage: $0 [catalog]\n"
+}
+
+if [ $# -ne 1 ]
+then
+  display_usage
+  exit 1
+fi
+
 catalog_name=$(eval "echo $1" | sed 's/\.pdf//')
+
+if [[ $catalog_name != *.pdf ]];then
+  echo -e "\nInput file must be a pdf\n"
+  display_usage
+  exit 1
+fi
 metatagger=inetpub/wwwroot/ipadapp/Antonio
 
 echo "Creating directory..."
