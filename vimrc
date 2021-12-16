@@ -96,6 +96,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'chrisbra/csv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sindrets/winshift.nvim'
+Plug 'preservim/vimux'
 " post install (yarn install | npm install) then load plugin only for editing supported files
 Plug 'prettier/vim-prettier', {
   \ 'do': 'yarn install',
@@ -111,6 +112,8 @@ call plug#end()
 " Leader Mappings
 " Use Space as the leader
 map <Space> <leader>
+" Toggle NERDTree
+map <Leader>t :NERDTreeToggle<CR>
 " Add a semicolon to the current line without moving the cursor
 nnoremap <Leader>; m'A;<ESC>`'
 " Source vimrc with <Leader>vc
@@ -120,9 +123,15 @@ map <Leader>q :q<CR>
 " Toggle highlighting
 nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 " Execute the current file with Python.
-nnoremap <Leader>p :w <CR>:!clear <CR>:!python % <CR>
+" nnoremap <Leader>p :w <CR>:!clear <CR>:!python % <CR>
 " Source the currnt file
 nnoremap <Leader>s :w<CR>:so %<CR>
+" Firebase deploy functions in the current directory
+nnoremap <Leader>f :w <CR>:call VimuxRunCommand("firebase deploy --only functions")<CR>
+" Easily switch buffers
+nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>d :bd<CR>
 
 " Get out of insert mode
 imap jk <Esc>
@@ -130,9 +139,6 @@ imap jk <Esc>
 " Keep on indenting
 vmap < <gv
 vmap > >gv
-
-" Toggle NERDTree with Leader + n
-map <Leader>n :NERDTreeToggle<CR>
 
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
