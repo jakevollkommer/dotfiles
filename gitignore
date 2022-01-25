@@ -9,10 +9,14 @@
 .Spotlight-V100
 .Trashes
 
+# JavaScript files #
+####################
+node_modules
+
 # Xcode files #
-###################
+###############
+xcuserdata/
 *.cache
-*.pbxproj
 *.xcuserstate
 *.xcbkptlist
 
