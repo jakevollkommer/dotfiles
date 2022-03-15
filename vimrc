@@ -236,7 +236,9 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 " Some filetypes should use 2 spaces for tabs
-autocmd BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.json,Podfile setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.ts,*.jsx,*.tsx,*.json,Podfile,Matchfile,Fastfile,Appfile setlocal tabstop=2 shiftwidth=2 softtabstop=2
+" Use ruby for fastlane files
+autocmd BufNewFile,BufRead Matchfile,Fastfile,Appfile set syntax=rb
 
 " Have nerdtree ignore certain files and directories.
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
