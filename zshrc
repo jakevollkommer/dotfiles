@@ -72,6 +72,13 @@ alias trail="<<<'${(F)path}'"
 alias vimrc="vim ~/.vimrc"
 alias zshrc="vim ~/.zshrc"
 alias seedbox="ftp seedbox@rain.seedhost.eu"
+# Xcode builds
+alias buildcpg="xcodebuild PROVISIONING_PROFILE=c040db53-b2fd-4278-beed-3b755b6527a1 -project ~/Work/VRLink/Projects/VRLink/Legacy/VRLink/VRLink.xcodeproj -scheme \"VRLink CPG\" -archivePath ~/Work/VRLink/Archives/Legacy/CPG/ -sdk iphoneos -arch \"armv6 armv7\" clean archive"
+# Use non-rosetta pod
+alias pod="arch -x86_64 pod"
+alias bundle="arch -x86_64 bundle"
+alias fastlane="bundle exec fastlane"
+alias flsession="fastlane spaceauth --copy-to-clipboard > /dev/null 2>&1 && gh secret set FASTLANE_SESSION -b '\$(pbpaste)'"
 
 # Filesystem aliases
 alias ..='cd ..'
