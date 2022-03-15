@@ -7,7 +7,7 @@ export N_PREFIX="$HOME/.n"
 export PREFIX="$N_PREFIX"
 export JDK_PREFIX="/opt/homebrew/opt/openjdk"
 export RBENV="$HOME/.rbenv/shims"
-export GCLOUD="$DOTFILES/bin/google-cloud-sdk"
+export GCLOUD="$HOME/google-cloud-sdk"
 # fastlane environment vars
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
