@@ -127,7 +127,8 @@ nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 " Source the currnt file
 nnoremap <Leader>s :w<CR>:so %<CR>
 " Firebase deploy functions in the current directory
-nnoremap <Leader>f :w <CR>:call VimuxRunCommand("firebase deploy --only functions")<CR>
+" call CR twice to cancel function deletion
+nnoremap <Leader>f :w <CR>:call VimuxRunCommand("firebase deploy --only functions")<CR><CR>
 " Easily switch buffers
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
