@@ -5,6 +5,12 @@ export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
 export N_PREFIX="$HOME/.n"
 export PREFIX="$N_PREFIX"
+export JDK_PREFIX="/opt/homebrew/opt/openjdk"
+export RBENV="$HOME/.rbenv/shims"
+export GCLOUD="$DOTFILES/bin/google-cloud-sdk"
+# fastlane environment vars
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
 
 # Change ZSH Options
 
@@ -23,14 +29,19 @@ autoload -Uz compinit && compinit
 
 # Default pyenv for python
 eval "$(pyenv init --path)"
+# Default rbenv for ruby
+eval "$(rbenv init - zsh)"
 
 # Add Locations to $path Array
 typeset -U path
 
 path=(
     "$N_PREFIX/bin"
+    "$RBENV/bin"
     "$DOTFILES/bin"
     "$HOME/.dotfiles/bin"
+    "$JDK_PREFIX/bin"
+    "$GCLOUD/bin"
     "usr/local/bin"
     "~/flutter/bin"
     $path
