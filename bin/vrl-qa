@@ -1,0 +1,25 @@
+#!/bin/bash
+
+display_usage() {
+  echo -e "\nUsage: $0 [client] [ipa]\n"
+}
+
+if [ $# -ne 2 ]
+then
+  display_usage
+  exit 1
+fi
+
+client=$1
+uppercase=$(echo "$client" | tr '[:lower:]' '[:upper:]')
+ipa=$2
+
+if [[ $ipa != *.ipa ]];then
+  echo -e "\nInput file must be a .ipa\n"
+  display_usage
+  exit 1
+fi
+
+echo "Uploading $ipa to GoRack QA..."
+
+curl --netrc "ftp://198.205.118.90/inetpub/wwwroot/mobile/qa/$client/download/VRLink$uppercase.ipa" -T "$ipa"
