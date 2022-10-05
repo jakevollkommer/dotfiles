@@ -23,8 +23,8 @@ set laststatus=2          " Always display the status line
 set autowrite             " Automatically :write before running commands
 set ignorecase            " Case insensitive searching
 set smartcase             " Overrides ignorecase if searching for capitals
-set tabstop=4             " Softtabs, 4 spaces
-set shiftwidth=4          " Use spaces instead of tabs
+set tabstop=2             " Softtabs, 4 spaces
+set shiftwidth=2          " Use spaces instead of tabs
 set expandtab
 set scrolloff=10          " Do not let cursor scroll below or above N number of lines when scrolling.
 set lazyredraw            " For smoother and faster macros
