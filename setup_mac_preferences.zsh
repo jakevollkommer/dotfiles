@@ -93,6 +93,9 @@ defaults write com.apple.dock "expose-group-by-app" -bool true
 echo "Remove the auto-hiding Dock delay ..."
 defaults write com.apple.Dock autohide-delay -float 0.0001;
 
+echo "Automatically hide and show menu bar in full screen ..."
+defaults write NSGlobalDomain AppleMenuBarVisibleInFullscreen -int 1
+
 echo "Remove Notification Center from Menubar ..."
 launchctl remove com.apple.notificationcenterui.agent
 
