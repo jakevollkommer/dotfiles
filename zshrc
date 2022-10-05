@@ -79,6 +79,10 @@ alias pod="arch -x86_64 pod"
 alias bundle="arch -x86_64 bundle"
 alias fastlane="bundle exec fastlane"
 alias flsession="fastlane spaceauth --copy-to-clipboard > /dev/null 2>&1 && gh secret set FASTLANE_SESSION -b '\$(pbpaste)'"
+alias disablesleep="sudo pmset -b sleep 0; sudo pmset -b disablesleep 1"
+alias allowsleep="sudo pmset -b sleep 0; sudo pmset -b disablesleep 0"
+# Kill all emulator processes (Firebase)
+alias killemulators="kill $(ps aux | grep 'emulator' | awk '{print $2}')"
 
 # Filesystem aliases
 alias ..='cd ..'
