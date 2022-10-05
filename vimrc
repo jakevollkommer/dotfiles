@@ -38,7 +38,8 @@ set numberwidth=5
 if !has('nvim')
     set noantialias
 endif
-set undodir=~/.vim/undo-dir
+set undodir=~/.vim/nvim-undo-dir " temp use nvim directory until comfortable deleting old
+" set undodir=~/.vim/undo-dir
 set undofile
 set undolevels=1000
 set undoreload=10000
@@ -80,16 +81,28 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 call plug#begin('~/.vim/plugged')
 
 " Plugins go here
-" TODO go through plugins, see what's good, get more?
-" TODO check out easymotion
-Plug 'pangloss/vim-javascript'
-Plug 'leafgarland/typescript-vim'
-Plug 'maxmellon/vim-jsx-pretty'
+" Plug 'pangloss/vim-javascript'
+" Plug 'leafgarland/typescript-vim'
+" Plug 'maxmellon/vim-jsx-pretty'
 Plug 'mg979/vim-visual-multi', {'branch': 'master'}
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'lukas-reineke/lsp-format.nvim'
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'windwp/nvim-ts-autotag'
+Plug 'jiangmiao/auto-pairs'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-obsession'
 Plug 'preservim/nerdtree'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -97,12 +110,27 @@ Plug 'chrisbra/csv.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sindrets/winshift.nvim'
 Plug 'preservim/vimux'
+Plug 'rking/ag.vim'
+" With treesitter, we don't need prettier
 " post install (yarn install | npm install) then load plugin only for editing supported files
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
+" Plug 'prettier/vim-prettier', {
+"   \ 'do': 'yarn install',
+"   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'yaml', 'html'] }
 
-" TODO prettier should run on save
+" " Async Prettier
+" let g:prettier#exec_cmd_async = 1
+" " Disable quickfix
+" " let g:prettier#quickfix_enabled = 0
+" " Run Prettier after changing text or leaving insert mode
+" " " when running at every change you may want to disable quickfix
+" " let g:prettier#quickfix_enabled = 0
+" " autocmd TextChanged,InsertLeave *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.svelte,*.yaml,*.html PrettierAsync
+" " Enable auto formatting of files that have "@format" or "@prettier" tag
+" let g:prettier#autoformat = 1
+" " Allow auto formatting for files without "@format" or "@prettier" tag
+" let g:prettier#autoformat_require_pragma = 0
+" " Using these two together enables autoformatting on save without tags
+
 call plug#end()
 
 " }}}
@@ -128,11 +156,33 @@ nnoremap <leader><space> :set hlsearch! hlsearch?<cr>
 nnoremap <Leader>s :w<CR>:so %<CR>
 " Firebase deploy functions in the current directory
 " call CR twice to cancel function deletion
-nnoremap <Leader>f :w <CR>:call VimuxRunCommand("firebase deploy --only functions")<CR><CR>
+nnoremap <Leader>f :w <CR>:call VimuxRunCommand("firebase deploy --only functions --project vrlink-95643")<CR>
+" Execute the most recent command
+nnoremap <Leader>r :w <CR>:call VimuxRunCommand("!!")<CR>
 " Easily switch buffers
 nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>d :bd<CR>
+
+" Tree-sitter LSP maps
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
+nnoremap gD :lua vim.lsp.buf.declaration()<CR>
+nnoremap gi :lua vim.lsp.buf.implementation()<CR>
+nnoremap gw :lua vim.lsp.buf.document_symbol()<CR>
+nnoremap gw :lua vim.lsp.buf.workspace_symbol()<CR>
+nnoremap gr :lua vim.lsp.buf.references()<CR>
+nnoremap gt :lua vim.lsp.buf.type_definition()<CR>
+nnoremap K :lua vim.lsp.buf.hover()<CR>
+nnoremap <c-k> :lua vim.lsp.buf.signature_help()<CR>
+nnoremap <leader>af :lua vim.lsp.buf.code_action()<CR>
+nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+
+" Auto format on save
+autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.js lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.ts lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.jsx lua vim.lsp.buf.formatting_sync()
+autocmd BufWritePre *.tsx lua vim.lsp.buf.formatting_sync()
 
 " Get out of insert mode
 imap jk <Esc>
@@ -163,11 +213,6 @@ noremap <c-right> <c-w><
 " Open/close folds with single quote
 nnoremap ' za
 
-" Grep the word underneath the cursor
-nnoremap gr :grep <cword> *<CR>
-" Grep the word underneath the cursor, searching only current file's directory
-nnoremap Gr :grep <cword> %:p:h/*<CR>
-
 " Move up/down visually without having to go left/right
 nnoremap j gj
 nnoremap k gk
@@ -176,9 +221,6 @@ nnoremap k gk
 " map <Leader>gs :Gstatus<CR>
 " map <Leader>gc :Gcommit<CR>
 " map <Leader>gp :Gpush<CR>
-
-" Start inserting at the corect indentation on an empty line
-nnoremap <tab> ddO
 
 " Center the cursor vertically when moving to the next word during a search.
 nnoremap n nzz
@@ -198,10 +240,6 @@ nmap :wQ :wq
 nmap :Wq :wq
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-
-" bind K to search word under cursor
-" TODO why doesn't this work?
-nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " }}}
 
@@ -236,19 +274,13 @@ endfunction
 inoremap <Tab> <c-r>=InsertTabWrapper()<cr>
 
 " Some filetypes should use 2 spaces for tabs
-autocmd BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.ts,*.jsx,*.tsx,*.json,Podfile,Matchfile,Fastfile,Appfile setlocal tabstop=2 shiftwidth=2 softtabstop=2
+autocmd BufRead,BufNewFile *.htm,*.html,*.css,*.js,*.ts,*.jsx,*.tsx,*.json,*.lua,Podfile,Matchfile,Fastfile,Appfile setlocal tabstop=2 shiftwidth=2 softtabstop=2
 " Use ruby for fastlane files
 autocmd BufNewFile,BufRead Matchfile,Fastfile,Appfile set syntax=rb
+au BufRead,BufNewFile *.ts set filetype=typescriptreact
 
 " Have nerdtree ignore certain files and directories.
 let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', '\.pyc$', '\.odt$', '\.png$', '\.gif$', '\.db$']
-
-" TODO learn some snippets https://github.com/SirVer/ultisnips
-
-" TODO use kite
-" set statusline=%<%f\ %h%m%r%{kite#statusline()}%=%-14.(%l,%c%V%)\ %P
-" set laststatus=2  " always display the status line
-" let g:kite_tab_complete=1
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -265,18 +297,6 @@ let g:jsx_ext_required = 0
 " Session plug-in will ask whether you want to restore your default session.
 let g:session_autoload = 'no'
 
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-endif
-
 " Display extra whitespace
 set list listchars=tab:»·,trail:·
 
@@ -284,8 +304,8 @@ set list listchars=tab:»·,trail:·
 if !isdirectory($HOME."/.vim")
     call mkdir($HOME."/.vim", "", 0770)
 endif
-if !isdirectory($HOME."/.vim/undo-dir")
-    call mkdir($HOME."/.vim/undo-dir", "", 0700)
+if !isdirectory($HOME."/.vim/nvim-undo-dir")
+    call mkdir($HOME."/.vim/nvim-undo-dir", "", 0700)
 endif
 
 " Treat <li> and <p> tags like the block tags they are
@@ -308,8 +328,12 @@ augroup cursor_off
     autocmd WinEnter * set cursorline
 augroup END
 
-" TODO find better one that doesn't annoy me
-" Add this to plugins too https://github.com/alvan/vim-closetag
-let g:closetag_filenames = "*.js,*.html,*.xhtml,*.phtml"
+let g:closetag_filenames = "*.js,*.ts,*.html,*.xhtml,*.phtml"
+
+" Trigger configuration. You need to change this to something other than <tab> if you use completion-nvim
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsEditSplit="vertical"
 
 " }}}

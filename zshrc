@@ -49,7 +49,7 @@ path=(
 
 # Create Aliases
 # Prefer nvim over vim
-# alias vim="nvim"
+alias vim="nvim"
 alias ls="exa"
 alias l="exa -lah"
 alias ll="exa -lah --git"

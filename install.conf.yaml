@@ -27,7 +27,7 @@
 - create:
   - ~/Work
   - ~/downloads
-  - ~/.vim/undo-history
+  - ~/.nvim/undo-history
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
