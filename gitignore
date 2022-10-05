@@ -20,9 +20,9 @@ xcuserdata/
 *.xcuserstate
 *.xcbkptlist
 
-# Vim swap files #
+# Vim session files #
 ###################
-*.swp
+Session.vim
 
 # Compiled source #
 ###################
