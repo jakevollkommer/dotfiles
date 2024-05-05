@@ -1,40 +1,128 @@
 #!/bin/bash
 
 display_usage() {
-  echo -e "\nUsage: $0 [catalog]\n"
+  echo "script usage: $0 [-l] [-s] <-c=pdf>" >&2
 }
 
-if [ $# -ne 1 ]
-then
+# Decodes a URL
+urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
+
+download_catalog() {
+  pdf="${url##*/}"
+  pdf=$(urldecode "$pdf")
+
+  if [[ $pdf != *.pdf ]];then
+    echo -e "\nDownload URL must be a pdf\n"
+    display_usage
+    exit 1
+  fi
+
+  wget $url
+}
+
+x=2048
+y=1536
+pdf=
+url=
+skip_first=0
+
+while :; do
+  case $1 in
+    -l|-\?|--landscape)
+        x=1536
+        y=2048
+        ;;
+    -c|--catalog)       # Takes an option argument; ensure it has been specified.
+      if [ "$2" ]; then
+        pdf=$2
+        shift
+      else
+        die 'ERROR: "--catalog" requires a non-empty option argument.'
+      fi
+      ;;
+    --catalog=?*)
+      pdf=${1#*=} # Delete everything up to "=" and assign the remainder.
+      ;;
+    --catalog=)         # Handle the case of an empty --catalog=
+      die 'ERROR: "--catalog" requires a non-empty option argument.'
+      ;;
+    -u|--url)       # Takes an option argument; ensure it has been specified.
+      if [ "$2" ]; then
+        url=$2
+        shift
+      else
+        die 'ERROR: "--url" requires a non-empty option argument.'
+      fi
+      ;;
+    --url=?*)
+      url=${1#*=} # Delete everything up to "=" and assign the remainder.
+      ;;
+    --url=)         # Handle the case of an empty --url=
+      die 'ERROR: "--url" requires a non-empty option argument.'
+      ;;
+    -s|--skip_first)
+      skip_first=1
+      ;;
+    --)              # End of all options.
+      shift
+      break
+      ;;
+    -?*)
+      printf 'WARN: Unknown option (ignored): %s\n' "$1" >&2
+      ;;
+    *)               # Default case: No more options, so break out of the loop.
+      break
+  esac
+  shift
+done
+
+if [ -z "$pdf" ] && [ -z "$url" ]; then
   display_usage
   exit 1
 fi
 
-catalog_name=$(eval "echo $1" | sed 's/\.pdf//')
+if [ -n "$url" ]; then
+  download_catalog
+fi
 
-if [[ $catalog_name != *.pdf ]];then
+catalog_name=$(eval "echo $pdf" | sed 's/\.pdf//')
+catalog_directory="/tmp/$catalog_name"
+
+if [[ $pdf != *.pdf ]];then
   echo -e "\nInput file must be a pdf\n"
   display_usage
   exit 1
 fi
-metatagger=inetpub/wwwroot/ipadapp/Antonio
+metatagger="inetpub/wwwroot/ipadapp/Antonio"
+first=1
 
 echo "Creating directory..."
-mkdir "$catalog_name"
-mv "$1" "$catalog_name"
-cd "$catalog_name"
+mkdir "$catalog_directory"
+mv "$pdf" "$catalog_directory"
+cd "$catalog_directory" || exit
+if [ ! -f "$pdf" ] || [ ! -s "$pdf" ]; then
+    echo "PDF file not found or is empty."
+    exit 1
+fi
 echo "Converting to PNG..."
-pdftoppm "$1" -scale-to-x 2048 -scale-to-y 1536 page -png 1>/dev/null 2>&1
+if [ $skip_first == 1 ];then
+  echo "Flipping dimensions of first page"
+  # pdftoppm "$pdf" -f $first -l $first -scale-to-x $y -scale-to-y $x page -png 1>/dev/null 2>&1
+  pdftoppm "$pdf" -f $first -scale-to-x $x -scale-to-y $y page -png
+  first=2
+fi
+pdftoppm "$pdf" -f $first -scale-to-x $x -scale-to-y $y page -png 1>/dev/null 2>&1
 
 echo "Rename pages..."
 FILES="page-0*"
 for f in $FILES
 do
   removed_zero=$(eval "echo $f | perl -ne 's/(?<=-|0)0(?=[0-9])//g; print;'")
-  mv $f $removed_zero
+  mv "$f" "$removed_zero"
 done
 
 echo "Uploading to GoRack..."
 cd ../
-find "$catalog_name" -type f -exec curl --netrc --ftp-create-dirs -T {} "ftp://198.205.118.90/"$metatagger"/{}" \;
-
+remote_directory="sftp://vrlikncorp.com/$metatagger/${catalog_name// /%20}"
+find "$catalog_directory" -type f -exec curl --netrc --ftp-create-dirs -T {} $remote_directory/ \;
+# rm -rf "$catalog_directory"

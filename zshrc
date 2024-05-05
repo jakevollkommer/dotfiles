@@ -1,3 +1,4 @@
+eval "$(termium shell-hook show pre)"
 # Set Variables
 # Syntax highlighting for man pages using bat
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
@@ -8,9 +9,29 @@ export PREFIX="$N_PREFIX"
 export JDK_PREFIX="/opt/homebrew/opt/openjdk"
 export RBENV="$HOME/.rbenv/shims"
 export GCLOUD="$HOME/google-cloud-sdk"
+export EDITOR="nvim"
 # fastlane environment vars
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export SPACESHIP_2FA_SMS_DEFAULT_PHONE_NUMBER="+16317457857"
+export NVIM_LOG_FILE=~/.config/nvim/nvim.log
+# FZF keybindings
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_OPTS="--ansi"
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_ALT_C_COMMAND="fd --type d"
+export FZF_CTRL_G_COMMAND="fd --type d"
+export FZF_CTRL_R_OPTS="--preview 'echo {}' --preview-window=up:30%:wrap"
+export FZF_TMUX=1
+# Open FZF in neovim
+function vim_fzf() {
+  local file
+  file=$(fzf --preview 'bat --style=numbers --color=always {}' --preview-window=up:60%:wrap) && nvim "$file"
+}
+zle -N vimf
+bindkey -s '^V' 'vim_fzf\n'
+bindkey '^G' fzf-cd-widget
 
 # Change ZSH Options
 
@@ -65,7 +86,10 @@ alias firebase="`npm config get prefix`/bin/firebase"
 alias mini-1="ssh administrator@198.205.118.94"
 alias mini-2="ssh administrator@198.205.118.163"
 alias mini-3="ssh administrator@198.205.118.162"
-alias gorack="ftp jvollkommer:Vrl-2021@198.205.118.90"
+alias mini-4="ssh administrator@173.8.55.67"
+alias macincloud="ssh admin@DU248101.macincloud.com"
+alias azure="ssh ios-dev@172.174.128.148"
+alias orack=zure"ftp jvollkommer:Vrl-2021@198.205.118.90"
 alias seedbox="ftp seedbox:sbsehct1B!@rain.seedhost.eu"
 alias bbd="brew bundle dump --describe --force"
 alias trail="<<<'${(F)path}'"
@@ -82,7 +106,7 @@ alias flsession="fastlane spaceauth --copy-to-clipboard > /dev/null 2>&1 && gh s
 alias disablesleep="sudo pmset -b sleep 0; sudo pmset -b disablesleep 1"
 alias allowsleep="sudo pmset -b sleep 0; sudo pmset -b disablesleep 0"
 # Kill all emulator processes (Firebase)
-alias killemulators="kill $(ps aux | grep 'emulator' | awk '{print $2}')"
+alias killemulators="pkill -f 'firebase.*emulator.*' "
 
 # Filesystem aliases
 alias ..='cd ..'
@@ -101,12 +125,6 @@ function mkcd() {
     mkdir -p "%@" && cd "$_";
 }
 
-# Use ZSH Plugins
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-#export SDKMAN_DIR="/Users/jakevollkommer/.sdkman"
-#[[ -s "/Users/jakevollkommer/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/jakevollkommer/.sdkman/bin/sdkman-init.sh"
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/opt/homebrew/Caskroom/miniforge/base/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
@@ -122,3 +140,7 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+eval "$(termium shell-hook show post)"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init --path)"
+fi

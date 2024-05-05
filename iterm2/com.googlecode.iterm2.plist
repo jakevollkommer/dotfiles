@@ -3640,11 +3640,17 @@
 	</dict>
 	<key>PreferSpeedToFullLigatureSupport</key>
 	<false/>
+	<key>ShowFullScreenTabBar</key>
+	<false/>
 	<key>SoundForEsc</key>
 	<false/>
 	<key>VisualIndicatorForEsc</key>
 	<false/>
 	<key>findMode_iTerm</key>
 	<integer>0</integer>
+	<key>kCPKSelectionViewPreferredModeKey</key>
+	<integer>0</integer>
+	<key>kCPKSelectionViewShowHSBTextFieldsKey</key>
+	<false/>
 </dict>
 </plist>

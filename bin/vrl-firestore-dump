@@ -1,0 +1,73 @@
+#!/bin/bash
+
+display_usage() {
+  echo "script usage: $0 <-n=folder_name> <destination>" >&2
+}
+
+PROJECT_ID="vrlink-95643"
+
+folder=
+
+while :; do
+  case $1 in
+    -n|--folder-name)
+      if [ "$2" ]; then
+        folder=$2
+        shift
+      else
+        die 'ERROR: "--folder-name" requires a non-empty option argument.'
+      fi
+      ;;
+    --folder-name=?*)
+      folder=$1
+      ;;
+    --folder-name=)         # Handle the case of an empty --folder-name=
+      die 'ERROR: "--folder" requires a non-empty option argument.'
+      ;;
+    --)              # End of all options.
+      shift
+      break
+      ;;
+    -?*)
+      printf 'WARN: Unknown option (ignored): %s\n' "$1" >&2
+      ;;
+    *)               # Default case: No more options, so break out of the loop.
+      break
+  esac
+  shift
+done
+
+destination=$1
+
+if [ -z "$folder" ] && [ -z "$destination" ]; then
+  display_usage
+  exit 1
+fi
+
+# Use the prod project
+printf "\nSwitching to production project\n"
+firebase use prod
+
+# Connect to gcloud project
+printf "\nConnecting to the Firebase project on gcloud\n"
+gcloud config set project $PROJECT_ID
+
+# Export the production data to gcloud bucket
+printf "\nExporting the production data to a gcloud bucket with name $folder\n"
+gcloud firestore export "gs://$PROJECT_ID.appspot.com/$folder"
+
+# Copy the folder to the destination
+printf "\nCopying the export to $destination\n"
+gsutil -m cp -r gs://$PROJECT_ID.appspot.com/$folder $destination
+
+# Remove the old dump
+printf "\nRemoving the old firestore dump\n"
+rm -rf firebase_export/firestore-export
+
+# Rename the dump folder
+printf "\nRenaming the firestore dump to firestore-export\n"
+mv $destination/$folder $destination/firestore-export
+
+# Switch back to dev project
+printf "\nSwitching back to dev project\n"
+firebase use dev

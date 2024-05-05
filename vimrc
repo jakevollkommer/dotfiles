@@ -96,6 +96,9 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'windwp/nvim-ts-autotag'
 Plug 'jiangmiao/auto-pairs'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.0' }
+Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'tpope/vim-surround'
@@ -111,6 +114,8 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'sindrets/winshift.nvim'
 Plug 'preservim/vimux'
 Plug 'rking/ag.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.1' }
 " With treesitter, we don't need prettier
 " post install (yarn install | npm install) then load plugin only for editing supported files
 " Plug 'prettier/vim-prettier', {
@@ -142,6 +147,10 @@ call plug#end()
 map <Space> <leader>
 " Toggle NERDTree
 map <Leader>t :NERDTreeToggle<CR>
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
 " Add a semicolon to the current line without moving the cursor
 nnoremap <Leader>; m'A;<ESC>`'
 " Source vimrc with <Leader>vc
@@ -176,6 +185,12 @@ nnoremap K :lua vim.lsp.buf.hover()<CR>
 nnoremap <c-k> :lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>af :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>rn :lua vim.lsp.buf.rename()<CR>
+
+" Find files using Telescope command-line sugar.
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 
 " Auto format on save
 autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting_sync()
@@ -335,5 +350,3 @@ let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 let g:UltiSnipsEditSplit="vertical"
-
-" }}}

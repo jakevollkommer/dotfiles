@@ -22,4 +22,4 @@ fi
 
 echo "Uploading $ipa to GoRack..."
 
-curl --netrc "ftp://198.205.118.90/inetpub/wwwroot/mobile/$client/download/VRLink$uppercase.ipa" -T "$ipa"
+echo "put $ipa" | sftp "vrhtml@vrlinkcorp.com:inetpub/wwwroot/mobile/$client/download/VRLink$uppercase.ipa"
