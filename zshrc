@@ -1,6 +1,7 @@
 eval "$(termium shell-hook show pre)"
 # Set Variables
 # Syntax highlighting for man pages using bat
+export OPENAI_API_KEY="sk-proj-E3hvMAgbxadbNGFMUiDfT3BlbkFJuegHZ0BJJfHu3UVqQKas"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
@@ -71,11 +72,11 @@ path=(
 # Create Aliases
 # Prefer nvim over vim
 alias vim="nvim"
-alias ls="exa"
-alias l="exa -lah"
-alias ll="exa -lah --git"
-alias la="exa -lah --git"
-alias lt="exa -lah --git --tree --level=2"
+alias ls="eza"
+alias l="eza -lah"
+alias ll="eza -lah --git"
+alias la="eza -lah --git"
+alias lt="eza -lah --git --tree --level=2"
 alias rm="trash"
 alias cat="bat"
 alias fuck="echo $'it\'s gonna be okay'"
