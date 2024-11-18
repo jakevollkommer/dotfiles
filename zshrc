@@ -1,7 +1,6 @@
-eval "$(termium shell-hook show pre)"
+# eval "$(termium shell-hook show pre)"
 # Set Variables
 # Syntax highlighting for man pages using bat
-export OPENAI_API_KEY="sk-proj-E3hvMAgbxadbNGFMUiDfT3BlbkFJuegHZ0BJJfHu3UVqQKas"
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 export HOMEBREW_CASK_OPTS="--no-quarantine"
 export NULLCMD=bat
@@ -17,7 +16,8 @@ export LANG=en_US.UTF-8
 export SPACESHIP_2FA_SMS_DEFAULT_PHONE_NUMBER="+16317457857"
 export NVIM_LOG_FILE=~/.config/nvim/nvim.log
 # FZF keybindings
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source <(fzf --zsh)
 export FZF_DEFAULT_OPTS="--ansi"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -33,6 +33,7 @@ function vim_fzf() {
 zle -N vimf
 bindkey -s '^V' 'vim_fzf\n'
 bindkey '^G' fzf-cd-widget
+bindkey '^T' fzf-file-widget
 
 # Change ZSH Options
 
@@ -72,13 +73,14 @@ path=(
 # Create Aliases
 # Prefer nvim over vim
 alias vim="nvim"
+# Open all git conflict files in vim
+alias conflict='vim $(git diff --name-only --diff-filter=U)'
 alias ls="eza"
 alias l="eza -lah"
 alias ll="eza -lah --git"
 alias la="eza -lah --git"
 alias lt="eza -lah --git --tree --level=2"
 alias rm="trash"
-alias cat="bat"
 alias fuck="echo $'it\'s gonna be okay'"
 alias shit="echo 'do not worry'"
 alias iphoneusb="sudo killall -STOP -c usbd"
@@ -145,3 +147,5 @@ eval "$(termium shell-hook show post)"
 if command -v pyenv 1>/dev/null 2>&1; then
   eval "$(pyenv init --path)"
 fi
+
+. "$HOME/.cargo/env"
