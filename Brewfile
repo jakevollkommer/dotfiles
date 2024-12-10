@@ -1,11 +1,18 @@
 tap "homebrew/bundle"
-tap "homebrew/cask-drivers"
 tap "homebrew/cask-fonts"
 tap "homebrew/services"
 tap "sidneys/homebrew"
 tap "simonw/llm"
 tap "stripe/stripe-cli"
 tap "thii/unxip"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.12"
+# Core application library for C
+brew "glib"
+# Vector graphics library with cross-device output support
+brew "cairo"
+# OpenType text shaping engine
+brew "harfbuzz"
 # Development kit for the Java programming language
 brew "openjdk"
 # Java build tool
@@ -24,6 +31,14 @@ brew "aria2"
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
+# Platform built on V8 to build network applications
+brew "node"
+# AWS Cloud Development Kit - framework for defining AWS infra as code
+brew "aws-cdk"
+# C parser in Python
+brew "pycparser"
+# C Foreign Function Interface for Python
+brew "cffi"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.11"
 # Official Amazon AWS command-line interface
@@ -40,16 +55,10 @@ brew "black"
 brew "boost"
 # Extract files from Microsoft cabinet files
 brew "cabextract"
-# Core application library for C
-brew "glib"
-# Vector graphics library with cross-device output support
-brew "cairo"
 # CD/DVD/Blu-ray premastering and recording software
 brew "cdrtools"
-# C parser in Python
-brew "pycparser"
-# C Foreign Function Interface for Python
-brew "cffi"
+# Tool for emulating mouse and keyboard events
+brew "cliclick"
 # ASP system to ground and solve logic programs
 brew "clingo"
 # Statistics utility to count lines of code
@@ -86,8 +95,8 @@ brew "fbthrift"
 brew "fb303"
 # Shared library for Watchman and Eden projects
 brew "edencommon"
-# Modern replacement for 'ls'
-brew "exa"
+# Modern, maintained replacement for ls
+brew "eza"
 # Easiest way to build and release mobile apps
 brew "fastlane"
 # Simple, fast and user-friendly alternative to find
@@ -98,8 +107,6 @@ brew "p11-kit"
 brew "unbound"
 # GNU Transport Layer Security (TLS) Library
 brew "gnutls"
-# OpenType text shaping engine
-brew "harfbuzz"
 # High quality MPEG Audio Layer III (MP3) encoder
 brew "lame", link: false
 # Library for JPEG-2000 image manipulation
@@ -116,10 +123,6 @@ brew "libbluray"
 brew "mbedtls"
 # C library SSHv1/SSHv2 client and server protocols
 brew "libssh"
-# Optimized BLAS library
-brew "openblas"
-# Open Visual Inference And Optimization toolkit for AI inference
-brew "openvino"
 # Framework for layout and rendering of i18n text
 brew "pango"
 # Secure Reliable Transport
@@ -130,6 +133,8 @@ brew "tesseract"
 brew "xvid", link: false
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
+# Firebase command-line tools
+brew "firebase-cli", link: false
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Library for encoding and decoding .avif files
@@ -152,8 +157,8 @@ brew "gsettings-desktop-schemas"
 brew "glib-networking"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# Manage compile and link flags for libraries
-brew "pkg-config"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
 # Generate introspection data for GObject libraries
 brew "gobject-introspection"
 # Library access to GnuPG
@@ -182,10 +187,6 @@ brew "httrack"
 brew "shared-mime-info"
 # ISO/IEC 23008-12:2017 HEIF file format decoder and encoder
 brew "libheif"
-# Perl compatible regular expressions library
-brew "pcre"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Library for reading RAW files from digital photo cameras
 brew "libraw"
 # Tools and libraries to manipulate images in many formats
@@ -196,14 +197,14 @@ brew "inetutils"
 brew "ipython"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
-# Platform built on V8 to build network applications
-brew "node"
 # Interactive environments for writing and running code
 brew "jupyterlab"
 # Provides library functionality for FIDO U2F & FIDO 2.0, including USB
 brew "libfido2"
 # Implementation of the file(1) command
 brew "libmagic"
+# Shared library for mediainfo
+brew "libmediainfo"
 # Bare libuv bindings for lua
 brew "luv"
 # Mac App Store command-line interface
@@ -228,8 +229,14 @@ brew "ncftp"
 brew "neovim"
 # HTTP/2 C Library
 brew "nghttp2"
+# Optimized BLAS library
+brew "openblas"
 # Create, run, and share large language models (LLMs)
 brew "ollama"
+# Open Visual Inference And Optimization toolkit for AI inference
+brew "openvino"
+# Perl compatible regular expressions library
+brew "pcre"
 # Fast, disk space efficient package manager
 brew "pnpm"
 # PDF rendering library (based on the xpdf-3.0 code base)
@@ -250,6 +257,8 @@ brew "python@3.10"
 brew "tcl-tk"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.8"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Generic machine emulator and virtualizer
 brew "qemu"
 # Tools for and transforming and inspecting PDF files
@@ -274,6 +283,8 @@ brew "tmux"
 brew "trash"
 # Fast Xcode unarchiver
 brew "unxip"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Watch files and take action when they change
 brew "watchman"
 # Internet file retriever
@@ -286,8 +297,6 @@ brew "youtube-dl"
 brew "yt-dlp"
 # UNIX shell (command interpreter)
 brew "zsh"
-# Offline NT Password Editor
-brew "sidneys/homebrew/chntpw"
 # Stripe CLI utility
 brew "stripe/stripe-cli/stripe"
 # Password manager that keeps all passwords secure behind one password
@@ -298,12 +307,16 @@ cask "1password-cli"
 cask "android-platform-tools"
 # Chromium based browser
 cask "arc"
+# Cross platform SQL editor and database management app
+cask "beekeeper-studio"
 # Web browser focusing on privacy
 cask "brave-browser"
 # E-books management software
 cask "calibre"
 # Automated testing of webapps for Google Chrome
 cask "chromedriver"
+# Screen capturing tool
+cask "cleanshot"
 # Guitar Hero clone
 cask "clone-hero"
 # Browser for SQLite databases
@@ -314,12 +327,11 @@ cask "discord"
 cask "docker"
 # Collaborative team software
 cask "figma"
-# Free monospaced font with programming ligatures
 cask "font-fira-code"
 # Web browser
 cask "google-chrome"
-# Utility to fix grammar errors and style issues in text
-cask "grammarly"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "google-cloud-sdk"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # Keyboard customiser
@@ -330,11 +342,15 @@ cask "keycastr"
 cask "kitty"
 # Free and open-source media player
 cask "kodi"
-# Create, manage and debug system- and user services
+# Create, manage and debug system and user services
 cask "launchcontrol"
 # Software for Logitech devices
 cask "logitech-options"
-# Web browser
+# Full TeX Live distribution with GUI applications
+cask "mactex"
+# Provides updates to various Microsoft products
+cask "microsoft-auto-update"
+# Multi-platform web browser
 cask "microsoft-edge"
 # Remote desktop client
 cask "microsoft-remote-desktop"
@@ -350,12 +366,16 @@ cask "notion"
 cask "origin"
 # Connect MIDI and OSC Controllers
 cask "osculator"
+# Administration and development platform for PostgreSQL
+cask "pgadmin4"
 # GUI client for PostgreSQL databases
 cask "postico"
 # Collaboration platform for API development
 cask "postman"
 # Control your tools with a few keystrokes
 cask "raycast"
+# Client for Old School RuneScape
+cask "runelite"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 # Video chat, voice call and instant messaging application
@@ -366,6 +386,10 @@ cask "slack"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
+# VPN client for secure internet access and private browsing
+cask "surfshark"
+# SSH client
+cask "termius"
 # To-do & task list manager
 cask "ticktick"
 # Virtual machines UI using QEMU
@@ -382,6 +406,8 @@ cask "vnc-viewer"
 cask "warp"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
+# Application for configuring any YubiKey
+cask "yubico-yubikey-manager"
 # Email client
 cask "zoho-mail"
 mas "Authenticator", id: 1538761576
@@ -394,7 +420,6 @@ mas "MonitorControlLite", id: 1595464182
 mas "Numbers", id: 409203825
 mas "Pages", id: 409201541
 mas "Server", id: 883878097
-mas "Snappy", id: 512617038
 mas "Spark", id: 1176895641
 mas "Spark Desktop", id: 6445813049
 mas "Xcode", id: 497799835
