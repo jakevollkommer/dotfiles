@@ -1,12 +1,10 @@
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
 tap "homebrew/services"
+tap "pakerwreah/calendr"
 tap "sidneys/homebrew"
 tap "simonw/llm"
 tap "stripe/stripe-cli"
 tap "thii/unxip"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.12"
 # Core application library for C
 brew "glib"
 # Vector graphics library with cross-device output support
@@ -31,16 +29,10 @@ brew "aria2"
 brew "autoconf"
 # Tool for generating GNU Standards-compliant Makefiles
 brew "automake"
-# Platform built on V8 to build network applications
-brew "node"
-# AWS Cloud Development Kit - framework for defining AWS infra as code
-brew "aws-cdk"
 # C parser in Python
 brew "pycparser"
 # C Foreign Function Interface for Python
 brew "cffi"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.11"
 # Official Amazon AWS command-line interface
 brew "awscli"
 # Microsoft Azure CLI 2.0
@@ -133,8 +125,6 @@ brew "tesseract"
 brew "xvid", link: false
 # Play, record, convert, and stream audio and video
 brew "ffmpeg"
-# Firebase command-line tools
-brew "firebase-cli", link: false
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # Library for encoding and decoding .avif files
@@ -197,14 +187,14 @@ brew "inetutils"
 brew "ipython"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Platform built on V8 to build network applications
+brew "node"
 # Interactive environments for writing and running code
 brew "jupyterlab"
 # Provides library functionality for FIDO U2F & FIDO 2.0, including USB
 brew "libfido2"
 # Implementation of the file(1) command
 brew "libmagic"
-# Shared library for mediainfo
-brew "libmediainfo"
 # Bare libuv bindings for lua
 brew "luv"
 # Mac App Store command-line interface
@@ -253,10 +243,8 @@ brew "pyenv-virtualenv"
 brew "python-lsp-server"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.10"
-# Tool Command Language
-brew "tcl-tk"
 # Interpreted, interactive, object-oriented programming language
-brew "python@3.8"
+brew "python@3.11"
 # Interpreted, interactive, object-oriented programming language
 brew "python@3.9"
 # Generic machine emulator and virtualizer
@@ -275,24 +263,20 @@ brew "rtorrent"
 brew "shtool"
 # Command-line interface for https://speedtest.net bandwidth tests
 brew "speedtest-cli"
+# Tool Command Language
+brew "tcl-tk"
 # Code-search similar to ack
 brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
 brew "trash"
-# Fast Xcode unarchiver
-brew "unxip"
-# Extremely fast Python package installer and resolver, written in Rust
-brew "uv"
 # Watch files and take action when they change
 brew "watchman"
 # Internet file retriever
 brew "wget"
 # Library to create, extract, and modify Windows Imaging files
 brew "wimlib"
-# Download YouTube videos from the command-line
-brew "youtube-dl"
 # Feature-rich command-line audio/video downloader
 brew "yt-dlp"
 # UNIX shell (command interpreter)
@@ -311,6 +295,7 @@ cask "arc"
 cask "beekeeper-studio"
 # Web browser focusing on privacy
 cask "brave-browser"
+cask "calendr"
 # E-books management software
 cask "calibre"
 # Automated testing of webapps for Google Chrome
@@ -323,17 +308,15 @@ cask "clone-hero"
 cask "db-browser-for-sqlite"
 # Voice and text chat software
 cask "discord"
-# App to build and share containerised applications and microservices
-cask "docker"
 # Collaborative team software
 cask "figma"
 cask "font-fira-code"
 # Web browser
 cask "google-chrome"
-# Set of tools to manage resources and applications hosted on Google Cloud
-cask "google-cloud-sdk"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# Official Jagex Launcher
+cask "jagex"
 # Keyboard customiser
 cask "karabiner-elements"
 # Open-source keystroke visualiser
@@ -346,8 +329,6 @@ cask "kodi"
 cask "launchcontrol"
 # Software for Logitech devices
 cask "logitech-options"
-# Full TeX Live distribution with GUI applications
-cask "mactex"
 # Provides updates to various Microsoft products
 cask "microsoft-auto-update"
 # Multi-platform web browser
@@ -366,16 +347,12 @@ cask "notion"
 cask "origin"
 # Connect MIDI and OSC Controllers
 cask "osculator"
-# Administration and development platform for PostgreSQL
-cask "pgadmin4"
 # GUI client for PostgreSQL databases
 cask "postico"
 # Collaboration platform for API development
 cask "postman"
 # Control your tools with a few keystrokes
 cask "raycast"
-# Client for Old School RuneScape
-cask "runelite"
 # Tool that provides consistent, highly configurable symbols for apps
 cask "sf-symbols"
 # Video chat, voice call and instant messaging application
@@ -386,16 +363,10 @@ cask "slack"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
-# VPN client for secure internet access and private browsing
-cask "surfshark"
-# SSH client
-cask "termius"
 # To-do & task list manager
 cask "ticktick"
 # Virtual machines UI using QEMU
 cask "utm"
-# Stream media from your computer to Chromecast
-cask "videostream"
 # Open-source code editor
 cask "visual-studio-code"
 # Multimedia player
@@ -406,22 +377,16 @@ cask "vnc-viewer"
 cask "warp"
 # Open-source version of the X.Org X Window System
 cask "xquartz"
-# Application for configuring any YubiKey
-cask "yubico-yubikey-manager"
 # Email client
 cask "zoho-mail"
+# Video communication and virtual meeting platform
+cask "zoom"
 mas "Authenticator", id: 1538761576
 mas "FileZilla Pro", id: 1298486723
 mas "GarageBand", id: 682658836
-mas "iMovie", id: 408981434
 mas "Keymou", id: 449863619
-mas "Keynote", id: 409183694
 mas "MonitorControlLite", id: 1595464182
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
-mas "Server", id: 883878097
 mas "Spark", id: 1176895641
 mas "Spark Desktop", id: 6445813049
-mas "Xcode", id: 497799835
 vscode "dart-code.dart-code"
 vscode "dart-code.flutter"
