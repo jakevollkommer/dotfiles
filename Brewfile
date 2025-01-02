@@ -270,7 +270,7 @@ brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
 # CLI tool that moves files or folder to the trash
-brew "trash"
+brew "trash", link: true
 # Watch files and take action when they change
 brew "watchman"
 # Internet file retriever
@@ -363,6 +363,8 @@ cask "slack"
 cask "spotify"
 # Video game digital distribution service
 cask "steam"
+# Unpacks archive files
+cask "the-unarchiver"
 # To-do & task list manager
 cask "ticktick"
 # Virtual machines UI using QEMU
