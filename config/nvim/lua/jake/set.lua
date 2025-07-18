@@ -30,3 +30,5 @@ vim.opt.updatetime = 50
 vim.opt.clipboard = 'unnamedplus'
 
 vim.o.splitright = true
+
+-- vim.opt.laststatus = 3

@@ -43,12 +43,43 @@ autocmd('LspAttach', {
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>vd", function() vim.diagnostic.open_float() end, opts)
-        vim.keymap.set("n", "<leader>ca", function() vim.lsp.buf.code_action() end, opts)
+        vim.keymap.set("n", "<leader>ca", function() 
+            vim.lsp.buf.code_action()
+        end, opts)
         vim.keymap.set("n", "<leader>gr", function() vim.lsp.buf.references() end, opts)
         vim.keymap.set("n", "<leader>rn", function() vim.lsp.buf.rename() end, opts)
         vim.keymap.set("i", "<C-h>", function() vim.lsp.buf.signature_help() end, opts)
         vim.keymap.set("n", "[d", function() vim.diagnostic.goto_next() end, opts)
         vim.keymap.set("n", "]d", function() vim.diagnostic.goto_prev() end, opts)
+        
+        -- Add format on save for JS/TS files (only use ESLint)
+        local filetype = vim.bo[e.buf].filetype
+        if filetype == "javascript" or filetype == "typescript" or filetype == "javascriptreact" or filetype == "typescriptreact" then
+            -- Create augroup first
+            local group = vim.api.nvim_create_augroup("FormatOnSave", { clear = false })
+            
+            -- Check if we already have a format autocmd for this buffer
+            local existing = vim.api.nvim_get_autocmds({
+                event = "BufWritePre",
+                buffer = e.buf,
+                group = group
+            })
+            
+            if #existing == 0 then
+                vim.api.nvim_create_autocmd("BufWritePre", {
+                    group = group,
+                    buffer = e.buf,
+                    callback = function()
+                        vim.lsp.buf.format({ 
+                            async = true,
+                            filter = function(client)
+                                return client.name == "eslint"
+                            end
+                        })
+                    end,
+                })
+            end
+        end
     end
 })
 

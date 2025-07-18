@@ -28,21 +28,12 @@ return {
         "lua_ls",
         "rust_analyzer",
         "tsserver",
+        "eslint-lsp",
       },
       handlers = {
         function(server_name) -- default handler (optional)
           require("lspconfig")[server_name].setup {
             capabilities = capabilities,
-            on_attach = function(client, bufnr)
-              if client.server_capabilities.documentFormattingProvider then
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                  buffer = bufnr,
-                  callback = function()
-                    vim.lsp.buf.format({ async = false })
-                  end
-                })
-              end
-            end,
           }
         end,
         ["lua_ls"] = function()
@@ -51,22 +42,13 @@ return {
             capabilities = capabilities,
             settings = {
               Lua = {
-                runtime = { version = "Lua 5.1" },
+                runtime = { version = "LuaJIT" },
                 diagnostics = {
                   globals = { "vim", "it", "describe", "before_each", "after_each" },
                 }
               }
             },
-            on_attach = function(client, bufnr)
-              if client.server_capabilities.documentFormattingProvider then
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                  buffer = bufnr,
-                  callback = function()
-                    vim.lsp.buf.format({ async = false })
-                  end
-                })
-              end
-            end,
+
           }
         end,
         ["tsserver"] = function()
@@ -96,15 +78,30 @@ return {
               end,
             },
             on_attach = function(client, bufnr)
-              if client.server_capabilities.documentFormattingProvider then
-                vim.api.nvim_create_autocmd("BufWritePre", {
-                  buffer = bufnr,
-                  callback = function()
-                    vim.lsp.buf.format({ async = false })
-                  end
-                })
-              end
+              -- Disable TypeScript server formatting in favor of ESLint
+              client.server_capabilities.documentFormattingProvider = false
+              client.server_capabilities.documentRangeFormattingProvider = false
             end,
+          })
+        end,
+        ["eslint"] = function()
+          local lspconfig = require("lspconfig")
+          lspconfig.eslint.setup({
+            capabilities = capabilities,
+
+            settings = {
+              workingDirectory = { mode = "auto" },
+              format = true, -- Enable ESLint formatting (includes Prettier)
+            },
+            root_dir = require("lspconfig").util.root_pattern(
+              ".eslintrc",
+              ".eslintrc.ts",
+              ".eslintrc.js",
+              ".eslintrc.json",
+              ".eslint.config.ts",
+              ".eslint.config.js"
+            ),
+            -- You can also add any other ESLint-specific configuration here
           })
         end,
       }
